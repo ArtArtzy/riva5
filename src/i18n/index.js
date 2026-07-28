@@ -66,6 +66,59 @@ translations['fr-FR'].va = {
   }
 }
 
+translations['zh-CN'].va.publications = '\u51fa\u7248\u7269'
+translations['ru-RU'].va.technicalNotes = '\u0422\u0435\u0445. \u043f\u0440\u0438\u043c\u0435\u0447\u0430\u043d\u0438\u044f'
+translations['ru-RU'].va.publications = '\u041f\u0443\u0431\u043b\u0438\u043a\u0430\u0446\u0438\u0438'
+translations['fr-FR'].va.publications = 'Publications'
+
+translations['zh-CN'].publications = {
+  heroTitle: '研究与出版物',
+  heroSubtitle: '探索有关区域一体化及参与全球价值链的研究、报告和分析见解。',
+  featured: '2026年4月 · 精选出版物',
+  reportTitle: '加强北亚和中亚的价值链参与',
+  reportSubtitle: '区域一体化与价值链分析器（RIVA）的见解及案例研究',
+  description: '本报告识别具有潜力的行业，并探讨北亚和中亚经济体如何加强参与区域和全球价值链。',
+  chooseLanguage: '选择语言',
+  english: '英语',
+  russian: '俄语',
+  original: '权威原版',
+  machineTranslated: '机器翻译',
+  pdf: 'PDF',
+  pages: '{count} 页'
+}
+
+translations['ru-RU'].publications = {
+  heroTitle: 'Исследования и публикации',
+  heroSubtitle: 'Исследования, доклады и аналитические материалы о региональной интеграции и участии в глобальных цепочках создания стоимости.',
+  featured: 'Апрель 2026 · Избранная публикация',
+  reportTitle: 'Расширение участия Северной и Центральной Азии в цепочках создания стоимости',
+  reportSubtitle: 'Выводы на основе Анализатора региональной интеграции и цепочек создания стоимости (RIVA) и тематических исследований',
+  description: 'В докладе определены перспективные отрасли и рассмотрены возможности укрепления участия экономик Северной и Центральной Азии в региональных и глобальных цепочках создания стоимости.',
+  chooseLanguage: 'Выберите язык',
+  english: 'Английский',
+  russian: 'Русский',
+  original: 'Официальный оригинал',
+  machineTranslated: 'Машинный перевод',
+  pdf: 'PDF',
+  pages: '{count} стр.'
+}
+
+translations['fr-FR'].publications = {
+  heroTitle: 'Recherche et publications',
+  heroSubtitle: 'Explorez les recherches, rapports et analyses sur l’intégration régionale et la participation aux chaînes de valeur mondiales.',
+  featured: 'Avril 2026 · Publication à la une',
+  reportTitle: 'Renforcer la participation aux chaînes de valeur en Asie du Nord et en Asie centrale',
+  reportSubtitle: 'Enseignements de l’Analyseur de l’intégration régionale et des chaînes de valeur (RIVA) et études de cas',
+  description: 'Ce rapport recense les secteurs prometteurs et examine comment les économies d’Asie du Nord et d’Asie centrale peuvent renforcer leur participation aux chaînes de valeur régionales et mondiales.',
+  chooseLanguage: 'Choisir une langue',
+  english: 'Anglais',
+  russian: 'Russe',
+  original: 'Version originale officielle',
+  machineTranslated: 'Traduction automatique',
+  pdf: 'PDF',
+  pages: '{count} pages'
+}
+
 translations['zh-CN'].backward = {
   title: '后向关联', viewBy: '查看方式', chooseFocus: '选择主要分析重点', exportingSector: '出口行业', sourceEconomy: '来源经济体', exportingEconomy: '出口经济体', importingEconomy: '进口经济体',
   periodStart: '起始年份', periodEnd: '结束年份', apply: '应用', sameEconomyError: '出口经济体不能与进口经济体相同。', yearRangeError: '结束年份必须晚于起始年份。请选择有效的年份范围。',

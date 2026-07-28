@@ -8,6 +8,10 @@ const routes = [
     component: () => import("src/pages/VADashboard.vue"),
   },
   {
+    path: "/publications",
+    component: () => import("src/pages/Publications.vue"),
+  },
+  {
     path: "/sectoral-analysis/health",
     component: () => import("src/pages/HealthSector.vue"),
   },

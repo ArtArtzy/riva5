@@ -180,7 +180,8 @@ const valueChainsMenu = [
 ];
 
 const isValueChainsRoute = computed(() =>
-  valueChainsMenu.some((item) => isActive(item.path)),
+  valueChainsMenu.some((item) => isActive(item.path)) ||
+  isActive("/publications"),
 );
 </script>
 

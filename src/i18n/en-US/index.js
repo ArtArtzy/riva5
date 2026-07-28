@@ -6,7 +6,7 @@ export default {
   success: 'Action was successful',
   nav: { home: 'Home', valueChains: 'Value Chains Analyzer', sectoral: 'Sectoral GVC Analysis', about: 'About', health: 'Health Sector', overview: 'Overview', gvcOverview: 'GVC overview', participation: 'Participation in GVCs', backward: 'Backward linkages', forward: 'Forward linkages', briefs: 'Economy Briefs' },
   va: {
-    menu: 'Menu', resources: 'Resources', technicalNotes: 'Technical Notes', userGuide: 'User Guide', demoVideos: 'Demo Videos', downloadData: 'Download Data', comingSoon: 'Coming soon',
+    menu: 'Menu', resources: 'Resources', technicalNotes: 'Technical Notes', publications: 'Publications', userGuide: 'User Guide', demoVideos: 'Demo Videos', downloadData: 'Download Data', comingSoon: 'Coming soon',
     title: 'Value Chains Analyzer', intro: 'Gain insight into your economy\'s participation in global value chains (GVCs). Uncover the sources of intermediate inputs and destinations of domestic value-added.',
     cards: {
       gvc: { title: 'How is your economy connected through value chains?', content: 'Explore key trade and production linkages to get an overview of how your economy participates in global value chains.' },
@@ -15,6 +15,21 @@ export default {
       forward: { title: 'Where does your economy contribute the most towards exports elsewhere?', content: 'Follow your value-added as it becomes part of other economies\' exports or supply chains.' },
       briefs: { title: 'How does your economy perform in global value chains?', content: 'Get a snapshot of your economy\'s GVC performance with charts, comparisons, and summaries.' }
     }
+  },
+  publications: {
+    heroTitle: 'Research & Publications',
+    heroSubtitle: 'Explore research, reports, and analytical insights on regional integration and participation in global value chains.',
+    featured: 'April 2026 · Featured publication',
+    reportTitle: 'Enhancing Value Chain Participation in North and Central Asia',
+    reportSubtitle: 'Insights from Regional Integration and Value Chain Analyzer (RIVA) and Case Studies',
+    description: 'This report identifies promising sectors and examines how North and Central Asian economies can strengthen their participation in regional and global value chains.',
+    chooseLanguage: 'Choose a language',
+    english: 'English',
+    russian: 'Русский',
+    original: 'Authoritative original',
+    machineTranslated: 'Machine-translated',
+    pdf: 'PDF',
+    pages: '{count} Pages'
   },
   economyBrief: {
     economy: 'Economy', download: 'Download', preparing: 'Preparing...',

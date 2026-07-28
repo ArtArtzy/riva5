@@ -8,13 +8,21 @@
       <div class="flex justify-between w-full">
         <div class="flex items-center">
           <div class="w-5 md:w-8 lg:w-10">
-            <img :src="iconFIle" alt="" class="h-4 md:h-6 lg:h-8" />
+            <img
+              :src="iconFIle"
+              alt=""
+              class="h-4 md:h-6 lg:h-8"
+              :class="{ 'brightness-0 invert': menu === 'Publications' }"
+            />
           </div>
           <div class="text-[18px] font-semibold fwhite md:text-2xl lg:text-3xl">
             {{ localizedPageName }}
           </div>
         </div>
-        <div class="flex gap-2" v-show="menu != 'Dashboard'">
+        <div
+          class="flex gap-2"
+          v-show="menu != 'Dashboard' && menu != 'Publications'"
+        >
           <q-btn
             outline
             style="transition: all 0.3s ease-in-out"
@@ -55,7 +63,7 @@
             </template>
           </q-btn>
         </div>
-        <div v-show="menu == 'Dashboard'">
+        <div v-show="menu == 'Dashboard' || menu == 'Publications'">
           <div class="relative inline-block text-left">
             <q-btn
               outline
@@ -65,7 +73,11 @@
               class="rounded px-4"
               @click="resourceOpen = !resourceOpen"
             />
-            <q-menu transition-show="jump-down" transition-hide="jump-up">
+            <q-menu
+              :key="locale"
+              transition-show="jump-down"
+              transition-hide="jump-up"
+            >
               <q-list bordered class="bg-white w-[180px] text-gray-700">
                 <!-- <q-item clickable v-ripple>
                   <div class="flex">
@@ -89,6 +101,19 @@
                       <img src="/images/icon-tech-notes.svg" class="w-5 h-5" />
                     </div>
                     <div>{{ t("va.technicalNotes") }}</div>
+                  </div>
+                </q-item>
+                <q-item
+                  v-close-popup
+                  clickable
+                  v-ripple
+                  @click="goToPublications"
+                >
+                  <div class="flex">
+                    <div class="w-8">
+                      <img src="/images/icon-publications.svg" class="w-5 h-5" />
+                    </div>
+                    <div>{{ t("va.publications") }}</div>
                   </div>
                 </q-item>
                 <!-- <q-item clickable v-ripple>
@@ -181,7 +206,7 @@
 <script setup>
 import { computed, ref, onMounted, watch } from "vue";
 import { Notify } from "quasar";
-import { useRoute } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
 import { useI18n } from "vue-i18n";
 const props = defineProps({
   menu: String,
@@ -190,9 +215,11 @@ const props = defineProps({
 });
 
 const route = useRoute();
-const { t } = useI18n({ useScope: "global" });
+const router = useRouter();
+const { locale, t } = useI18n({ useScope: "global" });
 const localizedPageName = computed(() => {
   if (props.menu === "Dashboard") return t("va.menu");
+  if (props.menu === "Publications") return t("va.publications");
   if (props.menu === "gvcoverview") return t("gvc.title");
   if (props.menu === "ParticipationInGVCs") return t("participation.title");
   if (props.menu === "BackwardLinkages") return t("backward.title");
@@ -236,6 +263,10 @@ const goToTechnicalNotes = () => {
     "_blank",
     "noopener,noreferrer",
   );
+};
+
+const goToPublications = () => {
+  router.push("/publications");
 };
 
 const copyToClipboard = async () => {
@@ -319,6 +350,10 @@ onMounted(() => {
   if (props.menu == "Dashboard") {
     pageName.value = "Menu";
     iconFIle.value = "/images/vaDashboard.svg";
+  } else if (props.menu == "Publications") {
+    pageName.value = "Publications";
+    iconFIle.value = "/images/book.svg";
+    isTinaOpen.value = false;
   } else if (props.menu == "gvcoverview") {
     pageName.value = "GVC Overview";
     iconFIle.value = "/images/vaGVCRelationships.svg";
