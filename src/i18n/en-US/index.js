@@ -5,6 +5,17 @@ export default {
   failed: 'Action failed',
   success: 'Action was successful',
   nav: { home: 'Home', valueChains: 'Value Chains Analyzer', sectoral: 'Sectoral GVC Analysis', about: 'About', health: 'Health Sector', overview: 'Overview', gvcOverview: 'GVC overview', participation: 'Participation in GVCs', backward: 'Backward linkages', forward: 'Forward linkages', briefs: 'Economy Briefs' },
+  aboutPage: {
+    title: 'About RIVA',
+    intro: 'RIVA — the Regional Integration and Value Chain Analyzer — is an online analytical platform developed to support a better understanding of how economies and sectors participate in regional and global value chains.',
+    description: 'By bringing together trade and value-added information in an accessible and interactive format, RIVA helps policymakers, researchers, analysts, and other users explore economic linkages, value chain participation, and sector-level relationships.',
+    whyTitle: 'Why RIVA?',
+    whyDescription: 'Global value chains connect economies through complex networks of production, trade, and value creation. Understanding these relationships can help identify opportunities, vulnerabilities, and areas for stronger regional cooperation.',
+    whyDetails: 'RIVA is designed to make these relationships easier to explore and interpret through analytical indicators and interactive visualizations.',
+    developedTitle: 'Developed by',
+    developedDescription: 'RIVA is developed by the Trade, Investment and Innovation Division of the United Nations Economic and Social Commission for Asia and the Pacific (ESCAP).',
+    partnerDescription: 'The platform has also benefited from collaboration and support from partner organizations.'
+  },
   healthPage: {
     lead: 'This section is currently under development.',
     supporting: 'We are working to bring you comprehensive sectoral insights and analytics.',
