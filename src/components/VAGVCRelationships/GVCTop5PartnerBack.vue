@@ -138,8 +138,14 @@ watch(
 const roundNumber = (n) => Number((Number(n) * 100).toFixed(1)); // 0.xx -> xx.x
 const toB = (m) => Number((Number(m) / 1000).toFixed(1)); // million -> billion (1 dec)
 
-const findSectorName = (id) =>
-  sectorList.value.find((e) => e.catID === id)?.shortname || `Sector ${id}`;
+const findSectorName = (id) => {
+  const sectorId = String(id ?? "").trim();
+  const sector = sectorList.value.find(
+    (e) => String(e.catID ?? "").trim() === sectorId
+  );
+
+  return sector?.shortname || `Sector ${sectorId}`;
+};
 
 function showIconColor(id) {
   if (!id) return "";

@@ -23,7 +23,7 @@
     >
       <div class="fwhitesub order-2 md:order-1 md:flex-1">
         <div class="font-bold text-sm">{{ t('footer.disclaimerTitle') }}</div>
-        <div class="text-xs">
+        <div class="text-xs whitespace-pre-line">
           {{ t('footer.disclaimer', { email: 'escap-tiid@un.org' }) }}
         </div>
       </div>

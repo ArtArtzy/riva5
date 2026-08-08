@@ -5,6 +5,12 @@ export default {
   failed: 'Action failed',
   success: 'Action was successful',
   nav: { home: 'Home', valueChains: 'Value Chains Analyzer', sectoral: 'Sectoral GVC Analysis', about: 'About', health: 'Health Sector', overview: 'Overview', gvcOverview: 'GVC overview', participation: 'Participation in GVCs', backward: 'Backward linkages', forward: 'Forward linkages', briefs: 'Economy Briefs' },
+  healthPage: {
+    lead: 'This section is currently under development.',
+    supporting: 'We are working to bring you comprehensive sectoral insights and analytics.',
+    followUp: 'Please check back soon for detailed data and analysis.',
+    backHome: 'Back to Home'
+  },
   va: {
     menu: 'Menu', resources: 'Resources', technicalNotes: 'Technical Notes', publications: 'Publications', userGuide: 'User Guide', demoVideos: 'Demo Videos', downloadData: 'Download Data', comingSoon: 'Coming soon',
     title: 'Value Chains Analyzer', intro: 'Gain insight into your economy\'s participation in global value chains (GVCs). Uncover the sources of intermediate inputs and destinations of domestic value-added.',
@@ -20,9 +26,9 @@ export default {
     heroTitle: 'Research & Publications',
     heroSubtitle: 'Explore research, reports, and analytical insights on regional integration and participation in global value chains.',
     featured: 'April 2026 · Featured publication',
-    reportTitle: 'Enhancing Value Chain Participation in North and Central Asia',
-    reportSubtitle: 'Insights from Regional Integration and Value Chain Analyzer (RIVA) and Case Studies',
-    description: 'This report identifies promising sectors and examines how North and Central Asian economies can strengthen their participation in regional and global value chains.',
+    reportTitle: 'Navigating RIVA: A Worked Example Using North and Central Asia Value Chains',
+    reportSubtitle: 'Enhancing Value Chain Participation in North and Central Asia',
+    description: 'This report walks through how to use the Regional Integration and Value Chain Analyzer (RIVA) to identify promising sectors and diagnose participation constraints, using North and Central Asian economies as a worked example.',
     chooseLanguage: 'Choose a language',
     english: 'English',
     russian: 'Русский',
@@ -123,10 +129,10 @@ export default {
     grossImportsExceeded: "In {year}, {partner}'s gross imports from {reporter} exceeded its exports by {share}% of bilateral gross trade.", grossExportsExceeded: "In {year}, {partner}'s gross exports to {reporter} exceeded its imports by {share}% of bilateral gross trade.", grossEqual: "In {year}, {partner}'s gross exports to {reporter} equaled its imports.", vaHigher: "In {year}, {partner}'s exported value added to {reporter} was {share}% higher than its imported value added.", vaLower: "In {year}, {partner}'s exported value added to {reporter} was {share}% lower than its imported value added.", vaEqual: "In {year}, {partner}'s imported value added from {reporter} equaled its exported value added."
   },
   home: {
-    heroTitle: 'Understand Value Chains.\nExplore Sector-Level Insights.',
-    heroDescription: 'RIVA helps you analyze economy-level value chains, sector dynamics, chokepoints, and bilateral trade relationships to inform evidence-based policy and strengthen economic resilience.',
+    heroTitle: 'Understand Global Value Chains',
+    heroDescription: 'RIVA guides you through economy-level value chains and trade-in-value-added relationships. The Sectoral GVC section provides insights on sector dynamics and chokepoints.',
     explore: 'Explore how value added flows across borders', dive: 'Dive deep into specific sectors to analyze', scroll: 'Scroll to explore',
-    waysTitle: 'Two ways to Explore Value Chains', waysSubtitle: 'Choose the experience that best fits your needs',
+    waysSubtitle: 'Choose the experience that best fits your needs',
     valueDescription: 'Explore economy-level value chains, cross-border linkages, and overall participation in global value chains (GVCs).', sectorDescription: 'Dive deep into specific sectors to analyze sectoral dynamics, chokepoints, and bilateral trade relationships.',
     useTitle: 'Use RIVA to...', readyTitle: 'Ready to explore the data?', readyDescription: 'Start your analysis today and uncover the insights that drive resilient and inclusive economies.',
     cards: [
@@ -140,7 +146,7 @@ export default {
   footer: {
     terms: 'Terms of Use',
     disclaimerTitle: 'DISCLAIMER:',
-    disclaimer: 'RIVA is powered by the Trade, Investment and Innovation Division of the United Nations Economic and Social Commission for Asia and the Pacific. For questions, please contact us at {email}.',
+    disclaimer: 'RIVA is powered by the Trade, Investment and Innovation Division of the United Nations Economic and Social Commission for Asia and the Pacific. For questions, please contact us at {email}.\n\nThe English version is the official and authoritative version of this content. Non-English versions are provided for convenience only and are generated through automated AI-assisted translation. They may contain inaccuracies, omissions, or differences in meaning. In the event of any discrepancy, the English version shall prevail.',
     termsIntro: 'All users may publish information taken directly from, or derived from, the platform under the following conditions:',
     termsOne: 'The platform must be acknowledged and cited as ESCAP RIVA, with the access date (e.g., September 2025), and made available at',
     termsTwo: 'Any conclusions or analyses based on the data and visualizations provided must be accompanied by a disclaimer stating that they are the responsibility of the authors and do not necessarily reflect the views of the United Nations.',

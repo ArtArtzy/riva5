@@ -2,11 +2,8 @@
   <section class="bg-white px-4 py-10 text-[#02253D] lg:py-12">
     <div class="mx-auto max-w-[1400px]">
       <h2 class="explore-title text-center font-semibold">
-        {{ t('home.waysTitle') }}
-      </h2>
-      <p class="mt-2 text-center text-[16px] md:text-[20px] text-gray-500">
         {{ t('home.waysSubtitle') }}
-      </p>
+      </h2>
 
       <div
         class="mx-auto mt-4 grid max-w-[980px] gap-4 lg:gap-10 md:grid-cols-2"
@@ -93,18 +90,18 @@ const goToHealthSector = () => router.push("/sectoral-analysis/health");
   line-height: 19px;
 }
 .explore-title {
-  font-size: 40px;
+  font-size: 32px;
   font-weight: 600;
+  line-height: 1.25;
 }
 @media (max-width: 767px) {
   .explore-title {
-    font-size: 24px;
-    line-height: 1.25;
+    font-size: 22px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   .explore-title {
-    font-size: 36px;
+    font-size: 30px;
   }
 }
 .explore-icon {
