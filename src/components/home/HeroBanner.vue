@@ -7,6 +7,9 @@
     <div
       class="hero-content relative mx-auto flex h-full w-full max-w-[1400px] items-end justify-end px-4 py-12 lg:px-8 lg:pb-16"
     >
+      <div class="home-resources-dropdown">
+        <ResourcesDropdown />
+      </div>
       <div class="hero-copy max-w-[630px]">
         <h1 class="hero-title font-semibold leading-tight">
           {{ t('home.heroTitle') }}
@@ -63,6 +66,7 @@ import {
 } from "vue";
 import { useRouter } from "vue-router";
 import { useI18n } from "vue-i18n";
+import ResourcesDropdown from "../ResourcesDropdown.vue";
 
 const router = useRouter();
 const { t } = useI18n();
@@ -121,6 +125,13 @@ const goToHealthSector = () => router.push("/sectoral-analysis/health");
   background: linear-gradient(to bottom left, #1b81c1 0%, #1a425a 100%);
 }
 
+.home-resources-dropdown {
+  position: absolute;
+  top: 0.75rem;
+  right: 1rem;
+  z-index: 5;
+}
+
 .scroll-cue {
   position: absolute;
   right: 1rem;
@@ -135,17 +146,6 @@ const goToHealthSector = () => router.push("/sectoral-analysis/health");
 
 .scroll-cue :deep(.q-icon) {
   font-size: 1.5rem;
-  animation: scroll-bounce 1.6s ease-in-out infinite;
-}
-
-@keyframes scroll-bounce {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(6px);
-  }
 }
 
 .hero-title {
@@ -247,6 +247,9 @@ const goToHealthSector = () => router.push("/sectoral-analysis/health");
   .scroll-cue {
     right: 2rem;
     bottom: 1.25rem;
+  }
+  .home-resources-dropdown {
+    right: 1rem;
   }
   .hero-primary,
   .hero-secondary {

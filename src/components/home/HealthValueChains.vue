@@ -114,6 +114,24 @@ const cards = [
   line-height: 1.3;
 }
 
+@media (min-width: 1280px) {
+  .health-value-chains-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .health-value-chains-icon {
+    margin-inline: auto;
+  }
+
+  .health-value-chains-card-copy {
+    width: 100%;
+  }
+}
+
 @media (max-width: 767px) {
   .health-value-chains-title {
     font-size: 28px;

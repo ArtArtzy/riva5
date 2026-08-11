@@ -63,71 +63,6 @@
             </template>
           </q-btn>
         </div>
-        <div v-show="menu == 'Dashboard' || menu == 'Publications'">
-          <div class="relative inline-block text-left">
-            <q-btn
-              outline
-              :label="t('va.resources')"
-              color="white"
-              icon-right="arrow_drop_down"
-              class="rounded px-4"
-              @click="resourceOpen = !resourceOpen"
-            />
-            <q-menu
-              :key="locale"
-              transition-show="jump-down"
-              transition-hide="jump-up"
-            >
-              <q-list bordered class="bg-white w-[180px] text-gray-700">
-                <!-- <q-item clickable v-ripple>
-                  <div class="flex">
-                    <div class="w-8">
-                      <img src="/images/icon-user-guide.svg" class="w-5 h-5" />
-                    </div>
-                    <div>{{ t("va.userGuide") }}</div>
-                  </div>
-                </q-item> -->
-                <!-- <q-item clickable v-ripple>
-                  <div class="flex">
-                    <div class="w-8">
-                      <img src="/images/icon-demo-vdo.svg" class="w-5 h-5" />
-                    </div>
-                    <div>{{ t("va.demoVideos") }}</div>
-                  </div>
-                </q-item> -->
-                <q-item clickable v-ripple>
-                  <div class="flex" @click="goToTechnicalNotes()">
-                    <div class="w-8">
-                      <img src="/images/icon-tech-notes.svg" class="w-5 h-5" />
-                    </div>
-                    <div>{{ t("va.technicalNotes") }}</div>
-                  </div>
-                </q-item>
-                <q-item
-                  v-close-popup
-                  clickable
-                  v-ripple
-                  @click="goToPublications"
-                >
-                  <div class="flex">
-                    <div class="w-8">
-                      <img src="/images/icon-publications.svg" class="w-5 h-5" />
-                    </div>
-                    <div>{{ t("va.publications") }}</div>
-                  </div>
-                </q-item>
-                <!-- <q-item clickable v-ripple>
-                  <div class="flex">
-                    <div class="w-8">
-                      <img src="/images/icon-user-guide.svg" class="w-5 h-5" />
-                    </div>
-                    <div>{{ t("va.downloadData") }}</div>
-                  </div>
-                </q-item> -->
-              </q-list>
-            </q-menu>
-          </div>
-        </div>
       </div>
     </div>
 
@@ -206,7 +141,6 @@
 <script setup>
 import { computed, ref, onMounted, watch } from "vue";
 import { Notify } from "quasar";
-import { useRoute, useRouter } from "vue-router";
 import { useI18n } from "vue-i18n";
 const props = defineProps({
   menu: String,
@@ -214,9 +148,7 @@ const props = defineProps({
   ShareText: Object,
 });
 
-const route = useRoute();
-const router = useRouter();
-const { locale, t } = useI18n({ useScope: "global" });
+const { t } = useI18n({ useScope: "global" });
 const localizedPageName = computed(() => {
   if (props.menu === "Dashboard") return t("va.menu");
   if (props.menu === "Publications") return t("va.publications");
@@ -242,7 +174,6 @@ const shareCustomized = computed(() => translationScope.value
 );
 const pageName = ref("");
 const iconFIle = ref("");
-const resourceOpen = ref(false);
 const isShareOpen = ref(false);
 const shareInput = ref("");
 const shareLink = ref("");
@@ -255,18 +186,6 @@ const goToUserGuide = () => {
 
 const goToDemoVDO = () => {
   console.log("DemoVDO");
-};
-
-const goToTechnicalNotes = () => {
-  window.open(
-    "https://riva.negotiatetrade.org/riva_docs/va_note/",
-    "_blank",
-    "noopener,noreferrer",
-  );
-};
-
-const goToPublications = () => {
-  router.push("/publications");
 };
 
 const copyToClipboard = async () => {

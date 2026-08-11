@@ -5,6 +5,12 @@ export default {
   failed: 'Action failed',
   success: 'Action was successful',
   nav: { home: 'Home', valueChains: 'Value Chains Analyzer', sectoral: 'Sectoral GVC Analysis', about: 'About', health: 'Health Sector', overview: 'Overview', gvcOverview: 'GVC overview', participation: 'Participation in GVCs', backward: 'Backward linkages', forward: 'Forward linkages', briefs: 'Economy Briefs' },
+  languageNotice: {
+    title: 'AI-translated content',
+    description: 'This {language} version has been translated from English using AI and is provided for convenience. In case of any discrepancy, please refer to the English version as the official version.',
+    continue: 'Continue in {language}',
+    english: 'View English'
+  },
   aboutPage: {
     title: 'About RIVA',
     intro: 'RIVA — the Regional Integration and Value Chain Analyzer — is an online analytical platform developed to support a better understanding of how economies and sectors participate in regional and global value chains.',

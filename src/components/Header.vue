@@ -44,6 +44,13 @@
         <button :class="['nav-link', { 'nav-link--active': currentRoute.path === '/about' }]" @click="goToAbout">{{ t('nav.about') }}</button>
       </nav>
 
+      <button
+        v-if="selectedLanguage !== 'English'"
+        type="button"
+        class="gt-lg ai-language-badge"
+        aria-label="About AI-translated content"
+        @click="openLanguageNotice"
+      >AI</button>
       <q-btn flat dense no-caps class="gt-lg desktop-language-force nav-button" aria-label="Select language">
         <img :src="languageFlags[selectedLanguage]" alt="" class="mr-2 h-4 w-5 rounded-sm object-cover" />
         <span>{{ selectedLanguage }}</span>
@@ -59,6 +66,13 @@
       </q-btn>
 
       <div class="lt-lg ml-auto shrink-0">
+        <button
+          v-if="selectedLanguage !== 'English'"
+          type="button"
+          class="gt-xs ai-language-badge"
+          aria-label="About AI-translated content"
+          @click="openLanguageNotice"
+        >AI</button>
         <q-btn flat dense no-caps class="gt-xs nav-button" aria-label="Select language">
           <img :src="languageFlags[selectedLanguage]" alt="" class="mr-2 h-4 w-5 rounded-sm object-cover" />
           <span>{{ selectedLanguage }}</span>
@@ -73,6 +87,13 @@
           </q-menu>
         </q-btn>
 
+        <button
+          v-if="selectedLanguage !== 'English'"
+          type="button"
+          class="lt-sm ai-language-badge"
+          aria-label="About AI-translated content"
+          @click="openLanguageNotice"
+        >AI</button>
         <q-btn flat round dense class="lt-sm" aria-label="Select language">
           <img :src="languageFlags[selectedLanguage]" :alt="`${selectedLanguage} flag`" class="h-4 w-5 rounded-sm object-cover" />
           <q-menu>
@@ -111,6 +132,40 @@
         </q-list>
       </q-card>
     </q-dialog>
+
+    <q-dialog v-model="languageDialogOpen" persistent>
+      <q-card class="language-notice-card">
+        <q-card-section class="language-notice-content">
+          <div class="language-notice-icon" aria-hidden="true">
+            <q-icon name="translate" size="28px" />
+          </div>
+          <div class="language-notice-title">{{ t("languageNotice.title") }}</div>
+          <p class="language-notice-description">
+            {{ t("languageNotice.description", { language: pendingLanguage }) }}
+          </p>
+        </q-card-section>
+
+        <q-card-actions class="language-notice-actions">
+          <q-btn
+            unelevated
+            no-caps
+            color="amber-6"
+            text-color="grey-10"
+            class="language-notice-continue"
+            :label="t('languageNotice.continue', { language: pendingLanguage })"
+            @click="continueInSelectedLanguage"
+          />
+          <q-btn
+            outline
+            no-caps
+            color="primary"
+            class="language-notice-english"
+            :label="t('languageNotice.english')"
+            @click="continueInEnglish"
+          />
+        </q-card-actions>
+      </q-card>
+    </q-dialog>
   </header>
 </template>
 
@@ -123,6 +178,8 @@ const router = useRouter();
 const currentRoute = useRoute();
 const { locale, t } = useI18n({ useScope: "global" });
 const menuOpen = ref(false);
+const languageDialogOpen = ref(false);
+const pendingLanguage = ref("English");
 const languageLocales = { English: "en-US", Chinese: "zh-CN", Russian: "ru-RU", French: "fr-FR" };
 const selectedLanguage = computed(() => Object.keys(languageLocales).find((language) => languageLocales[language] === locale.value) || "English");
 const languages = ["English", "Chinese", "Russian", "French"];
@@ -134,8 +191,34 @@ const languageFlags = {
 };
 
 const selectLanguage = (language) => {
-  locale.value = languageLocales[language];
+  const nextLocale = languageLocales[language];
+
+  if (nextLocale === locale.value) return;
+
+  if (language === "English") {
+    continueInEnglish();
+    return;
+  }
+
+  pendingLanguage.value = language;
+  languageDialogOpen.value = true;
+};
+
+const continueInSelectedLanguage = () => {
+  locale.value = languageLocales[pendingLanguage.value];
   localStorage.setItem("riva-locale", locale.value);
+  languageDialogOpen.value = false;
+};
+
+const continueInEnglish = () => {
+  locale.value = "en-US";
+  localStorage.setItem("riva-locale", locale.value);
+  languageDialogOpen.value = false;
+};
+
+const openLanguageNotice = () => {
+  pendingLanguage.value = selectedLanguage.value;
+  languageDialogOpen.value = true;
 };
 
 const navigate = (path) => {
@@ -186,7 +269,7 @@ const isValueChainsRoute = computed(() =>
 </script>
 
 <style scoped>
-.nav-link { padding: 0.25rem 0 0.125rem; color: white; cursor: pointer; }
+.nav-link { padding: 0.25rem 0 0.125rem; color: white; cursor: pointer; font-size: 0.875rem; }
 .nav-link:hover { color: #fdc300; }
 .nav-link--active { border-bottom: 2px solid #fdc300; }
 .nav-button { color: white; cursor: pointer; font-size: 0.875rem; }
@@ -195,6 +278,18 @@ const isValueChainsRoute = computed(() =>
 .menu-icon { height: 1.25rem; width: 1.25rem; filter: grayscale(1) brightness(0.46); object-fit: contain; }
 .mobile-nav-item--active { background: #e8f4fb; color: #0b5d8e; font-weight: 600; border-left: 4px solid #fdc300; }
 .header-menu-button { margin-right: 0.5rem; transform: scale(1.2); }
+.ai-language-badge { display: inline-flex; align-items: center; justify-content: center; min-width: 24px; height: 18px; margin-right: 6px; padding: 0 5px; border: 0; border-radius: 9999px; background: #ffc400; color: #183247; cursor: pointer; font-size: 0.6875rem; font-weight: 800; line-height: 1; }
+.ai-language-badge:hover { background: #ffe17a; }
+
+.language-notice-card { width: min(360px, calc(100vw - 32px)); border-radius: 8px; }
+.language-notice-content { padding: 20px 20px 8px; text-align: center; }
+.language-notice-icon { display: flex; width: 48px; height: 48px; align-items: center; justify-content: center; margin: 0 auto 10px; border-radius: 9999px; background: #e0f0fb; color: #0b5d8e; }
+.language-notice-title { color: #183247; font-size: 1rem; font-weight: 700; }
+.language-notice-description { margin: 8px 0 0; color: #5e6266; font-size: 0.8125rem; line-height: 1.45; text-align: left; }
+.language-notice-actions { display: flex; flex-direction: column; gap: 8px; padding: 8px 16px 16px; }
+.language-notice-actions .q-btn { width: 100%; min-height: 40px; border-radius: 5px; font-weight: 600; }
+.language-notice-continue { background: #ffc400 !important; }
+.language-notice-english { border-color: #8cb8d5; color: #0b5d8e !important; }
 
 .site-header { position: sticky; top: 0; }
 
