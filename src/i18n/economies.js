@@ -8,6 +8,8 @@
 export const economyTranslations = {
   "en-US": {
     "-": ["Individual Economies", "Economy Groups"],
+    KOR: "Republic of Korea",
+    TWN: "Taiwan, Province of China",
     APEC: "APEC", APTA: "APTA", AP: "Asia-Pacific", BIMSTEC: "BIMSTEC", CPTPP: "CPTPP",
     ENEA: "East and North-East Asia", EUR: "Europe", EUZ: "European Union", FEALAC: "FEALAC",
     LAC: "Latin America and the Caribbean", MERCOSUR: "MERCOSUR", NOAME: "North America",

@@ -301,7 +301,7 @@ export function tileData() {
       value: 6745408,
     },
     {
-      name: "South Korea",
+      name: "Republic of Korea",
       alpha3: "KOR",
       x: 7,
       y: 25,
