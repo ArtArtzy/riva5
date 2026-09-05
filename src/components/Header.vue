@@ -41,6 +41,11 @@
           </q-menu>
         </q-btn>
 
+        <button
+          :class="['nav-link whitespace-nowrap', { 'nav-link--active': currentRoute.path === '/regional-digital-trade-integration' }]"
+          @click="goToDigitalTradeIntegration"
+        >{{ t('nav.digitalTradeIntegration') }}</button>
+
         <button :class="['nav-link', { 'nav-link--active': currentRoute.path === '/about' }]" @click="goToAbout">{{ t('nav.about') }}</button>
       </nav>
 
@@ -128,6 +133,11 @@
               <q-item-section>{{ t('nav.health') }}</q-item-section>
             </q-item>
           </q-expansion-item>
+          <q-item
+            clickable
+            :class="{ 'mobile-nav-item--active': currentRoute.path === '/regional-digital-trade-integration' }"
+            @click="goToDigitalTradeIntegration"
+          ><q-item-section>{{ t('nav.digitalTradeIntegration') }}</q-item-section></q-item>
           <q-item clickable :class="{ 'mobile-nav-item--active': isActive('/about') }" @click="goToAbout"><q-item-section>{{ t('nav.about') }}</q-item-section></q-item>
         </q-list>
       </q-card>
@@ -228,6 +238,7 @@ const navigate = (path) => {
 
 const goToHome = () => navigate("/");
 const goToAbout = () => navigate("/about");
+const goToDigitalTradeIntegration = () => navigate("/regional-digital-trade-integration");
 const goToHealthSector = () => navigate("/sectoral-analysis/health");
 const isActive = (path) => {
   const currentPath = currentRoute.path;

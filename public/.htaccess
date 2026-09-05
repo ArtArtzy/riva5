@@ -15,6 +15,9 @@ DirectoryIndex index.html
   RewriteCond %{HTTP_HOST} !^riva\.negotiatetrade\.org$ [NC]
   RewriteRule ^ https://riva.negotiatetrade.org%{REQUEST_URI} [R=301,L,NE]
 
+  # Keep the conventional favicon URL pointed at the project favicon asset.
+  RewriteRule ^favicon\.ico$ favicon-32x32.png [L]
+
   # Do not rewrite real files or directories.
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d

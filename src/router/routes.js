@@ -16,6 +16,10 @@ const routes = [
     component: () => import("src/pages/HealthSector.vue"),
   },
   {
+    path: "/regional-digital-trade-integration",
+    component: () => import("src/pages/RegionalDigitalTradeIntegration.vue"),
+  },
+  {
     path: "/about",
     component: () => import("src/pages/About.vue"),
   },

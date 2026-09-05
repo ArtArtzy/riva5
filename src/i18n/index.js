@@ -397,6 +397,58 @@ translations['fr-FR'].economyBrief = {
   guideHtml: `<h2>Comment interpréter cette note économique ?</h2><p>Cette note résume l'intégration d'une économie dans les chaînes de valeur mondiales (CVM) au moyen des <strong>liens en amont</strong> et des <strong>liens en aval</strong>. Les résultats sont présentés en pourcentage des exportations brutes et en millions ou milliards USD afin d'illustrer l'importance relative et l'ampleur de chaque lien.</p><h3>1) Aperçu des CVM : liens en amont et en aval</h3><ul><li><strong>Les liens en amont (valeur ajoutée étrangère dans les exportations)</strong> indiquent dans quelle mesure les exportations dépendent d'intrants importés.</li><li><strong>Les liens en aval (valeur ajoutée intérieure dans les exportations étrangères)</strong> indiquent la part de valeur ajoutée intérieure utilisée dans les exportations d'autres économies. L'aperçu montre la direction des flux et les graphiques leur évolution.</li></ul><h3>2) Les cinq principaux secteurs des CVM</h3><p>Cette section présente les cinq secteurs contribuant le plus :</p><ul><li><strong>Liens en amont</strong> — secteurs les plus dépendants d'intrants étrangers.</li><li><strong>Liens en aval</strong> — secteurs dont la valeur ajoutée est la plus utilisée dans les exportations étrangères. Les barres empilées présentent la composition et les valeurs en millions ou milliards USD.</li></ul><h3>3) Les cinq principaux partenaires des CVM</h3><p>Cette section présente les cinq économies partenaires qui :</p><ul><li>apportent la plus grande valeur ajoutée étrangère aux exportations de l'économie ; et</li><li>utilisent le plus sa valeur ajoutée intérieure dans leurs exportations.</li></ul><p>Les barres empilées comparent la composition des partenaires dans le temps, en millions ou milliards USD.</p>`
 }
 
+enUS.nav.digitalTradeIntegration = 'Regional Digital Trade Integration'
+enUS.digitalTradeIntegration = {
+  title: 'Regional Digital Trade Integration',
+  desktopNotice: 'This page is optimized for use on a desktop computer. For the best experience with the interactive dashboards, please access it on a PC. On tablets and mobile devices, some content may be harder to navigate or display correctly.',
+  dashboardTitle: 'Regional Digital Trade Integration Index dashboard',
+  dashboardDescription: 'This dashboard provides a visual illustration of data from the Regional Digital Trade Integration Index (RDTII) and the Digital Trade Regulatory Similarity (DTRS). It offers an overview of digital trade regulatory landscapes, allowing users to explore data within and across the Asia-Pacific, Africa, and Latin America and the Caribbean regions.',
+  fullScreenDescription: 'For the best experience, please use full-screen mode. Click on the full-screen icon at the bottom right of the dashboard.',
+  regulatoryDatabaseTitle: 'RDTII 2.1 Regulatory Database',
+  regulatoryDatabaseDescription: 'The database compiles an inventory of currently active digital trade related regulations across economies, structured under the Regional Digital Trade Integration Index (RDTII) framework.',
+  dtrsTitle: 'Digital Trade Regulatory Similarity Index',
+  dtrsDescription: 'The Digital Trade Regulatory Similarity (DTRS) index is a bilateral index that captures policy-level similarity between trading partners. By comparing the policy indicator RDTII scores of each pillar, DTRS scores are generated for the 12 policy pillars and economy pairs, ranging from 0 to 1. A low DTRS score indicates a policy area that requires more efforts to strengthen regulatory cooperation, while a high DTRS score indicates greater regulatory similarity.'
+}
+
+translations['zh-CN'].nav.digitalTradeIntegration = '区域数字贸易一体化'
+translations['zh-CN'].digitalTradeIntegration = {
+  title: '区域数字贸易一体化',
+  desktopNotice: '本页面针对台式电脑进行了优化。为了获得最佳的互动仪表板使用体验，请使用电脑访问。在平板电脑和移动设备上，部分内容可能较难操作或无法正确显示。',
+  dashboardTitle: '区域数字贸易一体化指数仪表板',
+  dashboardDescription: '该仪表板以可视化方式展示区域数字贸易一体化指数（RDTII）和数字贸易监管相似度（DTRS）的数据，概览数字贸易监管格局，帮助用户探索亚太、非洲以及拉丁美洲和加勒比地区内部及跨地区的数据。',
+  fullScreenDescription: '为获得最佳体验，请使用全屏模式。点击仪表板右下角的全屏图标。',
+  regulatoryDatabaseTitle: 'RDTII 2.1 监管数据库',
+  regulatoryDatabaseDescription: '该数据库根据区域数字贸易一体化指数（RDTII）框架，汇编各经济体当前有效的数字贸易相关法规。',
+  dtrsTitle: '数字贸易监管相似度指数',
+  dtrsDescription: '数字贸易监管相似度（DTRS）指数是一个双边指数，用于衡量贸易伙伴之间政策层面的相似性。通过比较每个支柱的RDTII政策指标得分，可为12个政策支柱和经济体组合生成范围为0到1的DTRS得分。较低的DTRS得分表示需要更多努力来加强监管合作的政策领域，而较高的DTRS得分表示更高的监管相似性。'
+}
+
+translations['ru-RU'].nav.digitalTradeIntegration = 'Региональная цифровая торговая интеграция'
+translations['ru-RU'].digitalTradeIntegration = {
+  title: 'Региональная цифровая торговая интеграция',
+  desktopNotice: 'Эта страница оптимизирована для использования на настольном компьютере. Для удобной работы с интерактивными панелями рекомендуется открыть её на ПК. На планшетах и мобильных устройствах некоторыми элементами может быть сложнее пользоваться, а отдельные материалы могут отображаться некорректно.',
+  dashboardTitle: 'Панель индекса региональной цифровой торговой интеграции',
+  dashboardDescription: 'Эта панель визуально представляет данные Индекса региональной цифровой торговой интеграции (RDTII) и Индекса сходства регулирования цифровой торговли (DTRS). Она даёт обзор нормативно-правовой среды цифровой торговли и позволяет изучать данные внутри регионов и между Азиатско-Тихоокеанским регионом, Африкой, Латинской Америкой и Карибским бассейном.',
+  fullScreenDescription: 'Для оптимального просмотра используйте полноэкранный режим. Нажмите значок полноэкранного режима в правом нижнем углу панели.',
+  regulatoryDatabaseTitle: 'Регуляторная база данных RDTII 2.1',
+  regulatoryDatabaseDescription: 'База данных содержит перечень действующих нормативных актов, связанных с цифровой торговлей, по экономикам и структурированный в соответствии с рамочной системой Индекса региональной цифровой торговой интеграции (RDTII).',
+  dtrsTitle: 'Индекс сходства регулирования цифровой торговли',
+  dtrsDescription: 'Индекс сходства регулирования цифровой торговли (DTRS) является двусторонним индексом, отражающим сходство политик между торговыми партнёрами. Сопоставление баллов политических индикаторов RDTII по каждому направлению позволяет рассчитывать баллы DTRS для 12 направлений политики и пар экономик в диапазоне от 0 до 1. Низкий балл DTRS указывает на направление политики, где необходимы дополнительные усилия для укрепления регуляторного сотрудничества, а высокий балл означает большее сходство регулирования.'
+}
+
+translations['fr-FR'].nav.digitalTradeIntegration = 'Intégration régionale du commerce numérique'
+translations['fr-FR'].digitalTradeIntegration = {
+  title: 'Intégration régionale du commerce numérique',
+  desktopNotice: 'Cette page est optimisée pour une utilisation sur ordinateur. Pour une expérience optimale avec les tableaux de bord interactifs, veuillez y accéder depuis un PC. Sur tablette et mobile, certains contenus peuvent être plus difficiles à consulter ou s’afficher incorrectement.',
+  dashboardTitle: 'Tableau de bord de l’indice d’intégration régionale du commerce numérique',
+  dashboardDescription: 'Ce tableau de bord présente sous forme visuelle les données de l’Indice d’intégration régionale du commerce numérique (RDTII) et de l’Indice de similarité des réglementations du commerce numérique (DTRS). Il offre une vue d’ensemble des cadres réglementaires du commerce numérique et permet d’explorer les données au sein et entre les régions Asie-Pacifique, Afrique, Amérique latine et Caraïbes.',
+  fullScreenDescription: 'Pour une expérience optimale, veuillez utiliser le mode plein écran. Cliquez sur l’icône plein écran en bas à droite du tableau de bord.',
+  regulatoryDatabaseTitle: 'Base de données réglementaire RDTII 2.1',
+  regulatoryDatabaseDescription: 'La base de données recense les réglementations actuellement en vigueur liées au commerce numérique dans les économies, selon le cadre de l’Indice d’intégration régionale du commerce numérique (RDTII).',
+  dtrsTitle: 'Indice de similarité des réglementations du commerce numérique',
+  dtrsDescription: 'L’Indice de similarité des réglementations du commerce numérique (DTRS) est un indice bilatéral qui mesure la similarité des politiques entre partenaires commerciaux. En comparant les scores des indicateurs de politique RDTII pour chaque pilier, des scores DTRS sont calculés pour les 12 piliers et les paires d’économies, sur une échelle de 0 à 1. Un score DTRS faible indique un domaine nécessitant davantage d’efforts pour renforcer la coopération réglementaire, tandis qu’un score élevé indique une plus grande similarité réglementaire.'
+}
+
 export default {
   'en-US': enUS,
   ...translations
