@@ -151,6 +151,9 @@ export default {
     explore: 'Explore how value added flows across borders', dive: 'Dive deep into specific sectors to analyze', scroll: 'Scroll to explore',
     waysSubtitle: 'Choose the experience that best fits your needs',
     valueDescription: 'Explore economy-level value chains, cross-border linkages, and overall participation in global value chains (GVCs).', sectorDescription: 'Dive deep into specific sectors to analyze sectoral dynamics, chokepoints, and bilateral trade relationships.',
+    digitalTradeTitle: 'Regional Digital Trade Integration',
+    digitalTradeDescription: 'Explore the regulatory landscape for digital trade across the Asia-Pacific, Africa, and Latin America and the Caribbean. Access the RDTII dashboard, searchable regulatory database, and the Digital Trade Regulatory Similarity Index (DTRS).',
+    digitalTradeButton: 'Regional Digital Trade Integration',
     useTitle: 'Use RIVA to...', readyTitle: 'Ready to explore the data?', readyDescription: 'Start your analysis today and uncover the insights that drive resilient and inclusive economies.',
     cards: [
       ['Understand how economies connect through value chains', 'Explore how economies participate in global value chains through trade, production linkages, and cross-border flows. RIVA helps you see where value is created, where inputs come from, and how economies are connected across the region and beyond.'],
