@@ -449,6 +449,18 @@ translations['fr-FR'].digitalTradeIntegration = {
   dtrsDescription: 'L’Indice de similarité des réglementations du commerce numérique (DTRS) est un indice bilatéral qui mesure la similarité des politiques entre partenaires commerciaux. En comparant les scores des indicateurs de politique RDTII pour chaque pilier, des scores DTRS sont calculés pour les 12 piliers et les paires d’économies, sur une échelle de 0 à 1. Un score DTRS faible indique un domaine nécessitant davantage d’efforts pour renforcer la coopération réglementaire, tandis qu’un score élevé indique une plus grande similarité réglementaire.'
 }
 
+translations['zh-CN'].home.digitalTradeTitle = '区域数字贸易一体化'
+translations['zh-CN'].home.digitalTradeDescription = '探索亚太、非洲以及拉丁美洲和加勒比地区的数字贸易监管格局。访问 RDTII 仪表板、可搜索的监管数据库以及数字贸易监管相似度指数（DTRS）。'
+translations['zh-CN'].home.digitalTradeButton = '区域数字贸易一体化'
+
+translations['ru-RU'].home.digitalTradeTitle = 'Региональная цифровая торговая интеграция'
+translations['ru-RU'].home.digitalTradeDescription = 'Изучите нормативно-правовую среду цифровой торговли в Азиатско-Тихоокеанском регионе, Африке, Латинской Америке и Карибском бассейне. Получите доступ к панели RDTII, базе данных нормативных актов с поиском и Индексу сходства регулирования цифровой торговли (DTRS).'
+translations['ru-RU'].home.digitalTradeButton = 'Региональная цифровая торговая интеграция'
+
+translations['fr-FR'].home.digitalTradeTitle = 'Intégration régionale du commerce numérique'
+translations['fr-FR'].home.digitalTradeDescription = 'Explorez le paysage réglementaire du commerce numérique en Asie-Pacifique, en Afrique, en Amérique latine et dans les Caraïbes. Accédez au tableau de bord RDTII, à la base de données réglementaire consultable et à l’Indice de similarité des réglementations du commerce numérique (DTRS).'
+translations['fr-FR'].home.digitalTradeButton = 'Intégration régionale du commerce numérique'
+
 export default {
   'en-US': enUS,
   ...translations

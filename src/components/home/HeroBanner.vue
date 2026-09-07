@@ -229,33 +229,38 @@ const goToHealthSector = () => router.push("/sectoral-analysis/health");
 
 @media (max-width: 599px) {
   .hero-banner {
-    height: calc(100dvh - 120px);
+    height: calc(100dvh - 60px);
+    min-height: 560px;
   }
 
   .hero-content {
-    padding-right: 0;
-    padding-bottom: 0;
-    padding-left: 0;
+    height: 100%;
+    padding: 60px 8px 8px;
   }
 
   .hero-copy {
+    height: auto;
     width: 100%;
     max-width: none;
-    padding: 1rem;
+    border-radius: 0;
+    padding: 14px;
   }
 
   .hero-title {
-    font-size: 28px;
+    font-size: 18px;
+    line-height: 1.2;
   }
 
   .hero-description {
-    font-size: 16px;
-    line-height: 1.45;
+    margin-top: 10px;
+    font-size: 13px;
+    line-height: 1.4;
   }
 
   .hero-actions {
+    gap: 8px;
     width: 100%;
-    margin-top: 18px;
+    margin-top: 14px;
     padding-top: 0;
   }
 
@@ -321,7 +326,9 @@ const goToHealthSector = () => router.push("/sectoral-analysis/health");
 
 @media (max-width: 599px) {
   .hero-feature-grid {
-    display: block;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
   }
 }
 
@@ -482,6 +489,30 @@ const goToHealthSector = () => router.push("/sectoral-analysis/health");
 
   .hero-button-title {
     font-size: 14px;
+  }
+}
+
+@media (max-width: 599px) {
+  .hero-primary,
+  .hero-secondary {
+    min-height: 46px;
+    padding: 0 12px;
+  }
+
+  .hero-button-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+  }
+
+  .hero-button-title {
+    font-size: 14px;
+  }
+
+  .hero-button-chevron {
+    width: 14px;
+    height: 16px;
+    margin-left: 8px;
   }
 }
 </style>

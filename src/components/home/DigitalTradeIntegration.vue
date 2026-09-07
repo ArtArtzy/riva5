@@ -215,27 +215,45 @@ const goToDigitalTrade = () => router.push("/regional-digital-trade-integration"
 
 @media (max-width: 599px) {
   .digital-trade-block {
+    height: auto;
     min-height: 0;
-    padding: 1rem;
+    border-radius: 0;
+    padding: 14px;
   }
 
   .digital-trade-title {
-    font-size: 28px;
+    font-size: 18px;
+    line-height: 1.2;
   }
 
   .digital-trade-description {
-    font-size: 16px;
-    line-height: 1.45;
+    margin-top: 10px;
+    font-size: 13px;
+    line-height: 1.4;
   }
 
   .digital-trade-button {
     width: 100%;
+    min-height: 46px;
+    padding: 10px 12px;
+    font-size: 14px;
   }
 
   .digital-trade-action {
     width: 100%;
-    margin-top: 18px;
+    margin-top: 14px;
     padding-top: 0;
+  }
+
+  .digital-trade-button-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+  }
+
+  .digital-trade-chevron {
+    width: 14px;
+    height: 16px;
   }
 }
 </style>
