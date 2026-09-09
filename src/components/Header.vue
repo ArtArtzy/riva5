@@ -274,8 +274,7 @@ const valueChainsMenu = [
 ];
 
 const isValueChainsRoute = computed(() =>
-  valueChainsMenu.some((item) => isActive(item.path)) ||
-  isActive("/publications"),
+  valueChainsMenu.some((item) => isActive(item.path)),
 );
 </script>
 
