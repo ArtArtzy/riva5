@@ -37,7 +37,7 @@ const translations = {
 }
 
 translations['zh-CN'].va = {
-  menu: '菜单', resources: '资源', technicalNotes: '技术说明', comingSoon: '即将推出',
+  menu: '菜单', resources: '资源', technicalNotes: '技术说明', publications: '出版物', comingSoon: '即将推出',
   title: '价值链分析器', intro: '深入了解您的经济体参与全球价值链（GVC）的情况，探索中间投入品的来源以及国内增加值的去向。',
   cards: {
     gvc: { title: '您的经济体如何通过价值链相互联系？', content: '探索关键贸易和生产联系，了解您的经济体如何参与全球价值链。' },
@@ -49,7 +49,7 @@ translations['zh-CN'].va = {
 }
 
 translations['ru-RU'].va = {
-  menu: 'Меню', resources: 'Ресурсы', technicalNotes: 'Технические примечания', comingSoon: 'Скоро будет доступно',
+  menu: 'Меню', resources: 'Ресурсы', technicalNotes: 'Технические примечания', publications: 'Публикации', comingSoon: 'Скоро будет доступно',
   title: 'Анализатор цепочек стоимости', intro: 'Получите представление об участии вашей экономики в глобальных цепочках стоимости (ГЦС). Узнайте об источниках промежуточных ресурсов и направлениях внутренней добавленной стоимости.',
   cards: {
     gvc: { title: 'Как ваша экономика связана через цепочки стоимости?', content: 'Изучите ключевые торговые и производственные связи, чтобы понять участие вашей экономики в глобальных цепочках стоимости.' },
@@ -61,7 +61,7 @@ translations['ru-RU'].va = {
 }
 
 translations['fr-FR'].va = {
-  menu: 'Menu', resources: 'Ressources', technicalNotes: 'Notes techniques', comingSoon: 'Bientôt disponible',
+  menu: 'Menu', resources: 'Ressources', technicalNotes: 'Notes techniques', publications: 'Publications', comingSoon: 'Bientôt disponible',
   title: 'Analyseur des chaînes de valeur', intro: 'Analysez la participation de votre économie aux chaînes de valeur mondiales (CVM). Découvrez les sources des intrants intermédiaires et les destinations de la valeur ajoutée nationale.',
   cards: {
     gvc: { title: 'Comment votre économie est-elle connectée par les chaînes de valeur ?', content: 'Explorez les principaux liens commerciaux et de production pour comprendre comment votre économie participe aux chaînes de valeur mondiales.' },
@@ -125,14 +125,20 @@ translations['fr-FR'].publications = {
   pages: '{count} pages'
 }
 
+translations['zh-CN'].publications.rdtiTitle = '区域数字贸易一体化（RDTII）'
+translations['ru-RU'].publications.rdtiTitle = 'Региональная интеграция цифровой торговли (RDTII)'
+translations['fr-FR'].publications.rdtiTitle = 'Intégration régionale du commerce numérique (RDTII)'
+
 Object.assign(enUS.publications, {
   gvcTitle: 'Global Value Chains (GVC)',
   gvcSubtitle: 'Research and analysis on global value chains, trade and regional integration.',
-  rdtiTitle: 'Regional Digital Trade Integration (RDTI)',
+  rdtiTitle: 'Regional Digital Trade Integration (RDTII)',
   rdtiSubtitle: 'Methodology, economy profiles and regulatory analysis supporting digital trade integration across Asia and the Pacific.',
   monitorEyebrow: 'Trade & Supply Chain Monitor',
   monitorTitle: 'Trade & Supply Chain Monitor Briefs',
-  monitorDescription: 'Timely analysis and insights on trade trends, supply chains and regional developments, using RIVA data and other ESCAP resources.',
+  monitorDescriptionStart: 'In recent times, geopolitical unrest and disruptions in global trade, particularly in West Asia, have placed significant pressure on global value chains. In a series of policy briefs, ESCAP uses data from the ',
+  monitorDescriptionAnalyzer: 'RIVA Value Chain Analyzer',
+  monitorDescriptionEnd: ' to examine the exposure of economies in the Asia-Pacific region to such shocks and the structural vulnerabilities affecting trade. The briefs also provide sectoral trade analyses of these exposures, along with policy guidance to help economies navigate an increasingly complex and rapidly evolving global trade environment.',
   exploreMonitor: 'Explore Trade & Supply Chain Monitor',
   heroEyebrow: 'RIVA KNOWLEDGE HUB',
   featuredHeading: 'Featured Publication',
@@ -142,7 +148,7 @@ Object.assign(enUS.publications, {
   exploreTitle: 'Explore RDTII',
   exploreSubtitle: 'Key resources on digital trade, economy profiles, and regional integration.',
   economyProfiles: 'Economy Profiles',
-  economyProfilesDescription: 'Explore digital trade policy profiles across Asia-Pacific economies and subregions.',
+  economyProfilesDescription: 'This ESCAP publication provides digital trade policy profiles of Asia-Pacific economies, included in the ESCAP Regional Digital Trade Integration Index (RDTII 2.1) database. The report offers an overview of the policy landscape, outlining both enabling policies and challenges to digital trade integration. Additionally, it highlights new policy measures, proposals related to digital trade, and the participation of the concerned economies in trade negotiations involving digital trade.',
   eastNorthEastAsia: 'East & North-East Asia',
   southEastAsia: 'South-East Asia',
   southSouthWestAsia: 'South & South-West Asia',
@@ -150,7 +156,11 @@ Object.assign(enUS.publications, {
   exploreEconomyProfiles: 'Explore Economy Profiles',
   guideLabel: 'GUIDE',
   guideTitle: 'Regional Digital Trade Integration Index 2.1: A Guide',
-  guideDescription: 'Understand the framework, indicators and methodology behind RDTII 2.1.',
+  guideDescription: 'The Regional Digital Trade Integration Index (RDTII) Guide 2.1 edition serves as a vital handbook designed to assist policymakers and policy researchers in analyzing digital trade regulations. The Guide provides essential explanations of the structure of the RDTII 2.1 framework, a multidimensional cross-economy index of digital trade regulatory integration utilized by ESCAP for digital trade regulatory analysis. This updated edition builds upon the foundational work of the previous version (RDTII 2.0 Guide), jointly prepared by ESCAP, ECA, and ECLAC. To enhance the understanding of the digital trade policy environment in Asia-Pacific, this 2.1 edition introduces new indicators, discusses resulting policy implications, and suggests related sources.',
+  guideDescriptionFirst: 'The Regional Digital Trade Integration Index (RDTII) Guide 2.1 edition serves as a vital handbook designed to assist policymakers and policy researchers in analyzing digital trade regulations. The Guide provides essential explanations of the structure of the RDTII 2.1 framework, a multidimensional cross-economy index of digital trade regulatory integration utilized by ESCAP for digital trade regulatory analysis.',
+  guideDescriptionSecondStart: 'This updated edition builds upon the foundational work of the previous version (',
+  guideDescriptionSecondEnd: '), jointly prepared by ESCAP, ECA, and ECLAC. To enhance the understanding of the digital trade policy environment in Asia-Pacific, this 2.1 edition introduces new indicators, discusses resulting policy implications, and suggests related sources.',
+  previousGuide: 'RDTII 2.0 Guide',
   viewGuide: 'View Guide',
   referenceHeading: 'Reference Publication',
   referenceSubtitle: 'The latest economy profiles report, providing comparative analysis across Asia-Pacific economies.',
@@ -165,18 +175,27 @@ Object.assign(enUS.publications, {
   regulatoryReviewsTitle: 'Digital Trade Regulatory Reviews 2025',
   regulatoryReviewsSubtitle: 'Explore regional assessments of digital trade regulations across Asia and the Pacific.',
   reviewAsiaTitle: 'Digital trade regulatory review for Asia and the Pacific, 2025',
-  reviewAsiaDescription: 'Key updates and findings from ESCAP on the digital trade policy landscape across Asia and the Pacific.',
+  reviewAsiaDescription: 'The 2025 edition of the Digital Trade Regulatory Review presents regulatory updates and findings from ESCAP, aiming to deepen understanding of the digital trade policy environment across Asia and the Pacific. It provides an overview of the digital trade policy landscape of sample Asia-Pacific economies, based on data as of 2025. The analysis follows the ESCAP-ECA-ECLAC RDTII framework outlined in the Regional Digital Trade Integration Index 2.1: A Guide. The report also proposes policy recommendations to advance digital trade integration within the region.',
   reviewAseanTitle: 'Digital trade regulatory review for ASEAN, 2025',
-  reviewAseanDescription: 'Analysis of the digital trade policy environment across ASEAN member states, with examples and recommendations.',
+  reviewAseanDescription: 'The Digital Trade Regulatory Review for ASEAN is a joint publication by the Economic and Social Commission for Asia and the Pacific (ESCAP) and the Association of Southeast Asian Nations (ASEAN) Secretariat. This report marks a significant step toward enhancing the understanding of the digital trade policy environment across all ASEAN member states. It provides an overview of their digital trade policy landscape of the 10 ASEAN economies, based on data collected by ESCAP as of 2025. The data collection and analysis is built upon the ESCAP-ECA-ECLAC RDTII framework, as outlined in the Regional Digital Trade Integration Index 2.1: A Guide. The report provides examples of successful regulatory integration initiatives in ASEAN and proposes strategic recommendations for further enhancing digital trade integration among the ASEAN member states.',
   reviewNorthCentralAsiaTitle: 'Digital trade regulatory review for North and Central Asia, 2025',
-  reviewNorthCentralAsiaDescription: 'Comparative analysis of digital trade regulations across the North and Central Asia region.',
+  reviewNorthCentralAsiaDescription: 'The report provides a comparative overview of digital trade regulatory practices across the North and Central Asia subregion. The analysis is based on the Regional Digital Trade Integration Index (RDTII 2.1) framework, a comprehensive tool that helps identify patterns of convergence and divergence to inform evidence-based policymaking, as outlined in the Regional Digital Trade Integration Index 2.1: A Guide. Furthermore, to quantify the alignment among economies, the Digital Trade Regulatory Similarity (DTRS) Index is calculated from the RDTII 2.1 data to assess potential complexity of digital trade integration across the North and Central Asia.',
   reviewPacificTitle: 'Digital trade regulatory review for the Pacific, 2025',
-  reviewPacificDescription: 'Comparative overview of digital trade regulatory practices across the Pacific region.',
+  reviewPacificDescription: 'The report provides a comparative overview of digital trade regulatory practices across the Pacific region. The analysis is based on the Regional Digital Trade Integration Index (RDTII 2.1) framework, a comprehensive tool that helps identify patterns to convergence and divergence to inform evidence-based policymaking. Furthermore, to quantify the alignment among economies, the Digital Trade Regulatory Similarity (DTRS) Index is calculated from the RDTII 2.1 data to potential complexity of digital trade integration across the Pacific.',
   reviewSouthSouthWestAsiaTitle: 'Digital trade regulatory review for South and South-West Asia, 2025',
-  reviewSouthSouthWestAsiaDescription: 'Comparative analysis of digital trade regulations across the South and South-West Asia region.'
+  reviewSouthSouthWestAsiaDescription: 'The report provides a comparative overview of digital trade regulatory practices across the South and South-West Asia subregion. The analysis is based on the Regional Digital Trade Integration Index (RDTII 2.1) framework, a comprehensive tool that helps identify patterns of convergence and divergence to inform evidence-based policymaking, as outlined in the Regional Digital Trade Integration Index 2.1: A Guide. Furthermore, to quantify the alignment among economies, the Digital Trade Regulatory Similarity (DTRS) Index is calculated from the RDTII 2.1 data to assess potential complexity of digital trade integration across the South and South-West Asia.'
 })
 
 Object.assign(translations['zh-CN'].publications, {
+  gvcTitle: '全球价值链（GVC）',
+  gvcSubtitle: '全球价值链、贸易与区域一体化的研究与分析。',
+  rdtiSubtitle: '支持亚太地区数字贸易一体化的方法、经济体概况和监管分析。',
+  monitorEyebrow: '贸易与供应链监测',
+  monitorTitle: '贸易与供应链监测简报',
+  monitorDescriptionStart: '近年来，地缘政治动荡和全球贸易中断，尤其是西亚地区的局势，给全球价值链带来了巨大压力。在一系列政策简报中，ESCAP 使用 ',
+  monitorDescriptionAnalyzer: 'RIVA 价值链分析器',
+  monitorDescriptionEnd: ' 的数据，研究亚太地区经济体面临此类冲击的风险以及影响贸易的结构性脆弱性。简报还从行业层面分析这些风险，并提供政策指导，帮助经济体应对日益复杂且快速变化的全球贸易环境。',
+  exploreMonitor: '查看贸易与供应链监测',
   heroEyebrow: 'RIVA 知识中心',
   featuredHeading: '精选出版物',
   featuredDate: '2026年4月',
@@ -185,7 +204,7 @@ Object.assign(translations['zh-CN'].publications, {
   exploreTitle: '探索 RDTII',
   exploreSubtitle: '数字贸易、经济体概况和区域一体化的关键资源。',
   economyProfiles: '经济体概况',
-  economyProfilesDescription: '探索亚太经济体及其分区域的数字贸易政策概况。',
+  economyProfilesDescription: '本出版物提供亚太经济体的数字贸易政策概况，并纳入 ESCAP 区域数字贸易一体化指数（RDTII 2.1）数据库。报告概述了政策环境，介绍促进数字贸易一体化的政策及其面临的挑战。此外，报告还重点介绍新的政策措施、与数字贸易相关的提案，以及相关经济体参与数字贸易谈判的情况。',
   eastNorthEastAsia: '东亚和东北亚',
   southEastAsia: '东南亚',
   southSouthWestAsia: '南亚和西南亚',
@@ -193,7 +212,11 @@ Object.assign(translations['zh-CN'].publications, {
   exploreEconomyProfiles: '探索经济体概况',
   guideLabel: '指南',
   guideTitle: '区域数字贸易一体化指数 2.1：指南',
-  guideDescription: '了解 RDTII 2.1 的框架、指标和方法。',
+  guideDescription: '区域数字贸易一体化指数（RDTII）指南2.1版是一部重要手册，旨在帮助政策制定者和政策研究人员分析数字贸易法规。本指南对RDTII 2.1框架的结构作出必要说明。该框架是一个跨经济体、多维度的数字贸易监管一体化指数，ESCAP将其用于数字贸易监管分析。本次更新版以此前版本（RDTII 2.0 指南）的基础工作为基础，该版本由ESCAP、ECA和ECLAC联合编制。为增进对亚太地区数字贸易政策环境的了解，2.1版引入了新指标，讨论由此产生的政策影响，并推荐相关资料。',
+  guideDescriptionFirst: '区域数字贸易一体化指数（RDTII）指南2.1版是一部重要手册，旨在帮助政策制定者和政策研究人员分析数字贸易法规。本指南对RDTII 2.1框架的结构作出必要说明。该框架是一个跨经济体、多维度的数字贸易监管一体化指数，ESCAP将其用于数字贸易监管分析。',
+  guideDescriptionSecondStart: '本次更新版以此前版本（',
+  guideDescriptionSecondEnd: '）的基础工作为基础，该版本由ESCAP、ECA和ECLAC联合编制。为增进对亚太地区数字贸易政策环境的了解，2.1版引入了新指标，讨论由此产生的政策影响，并推荐相关资料。',
+  previousGuide: 'RDTII 2.0 指南',
   viewGuide: '查看指南',
   referenceHeading: '参考出版物',
   referenceSubtitle: '最新经济体概况报告，提供亚太经济体的比较分析。',
@@ -208,18 +231,27 @@ Object.assign(translations['zh-CN'].publications, {
   regulatoryReviewsTitle: '2025 年数字贸易监管审查',
   regulatoryReviewsSubtitle: '探索亚洲及太平洋地区数字贸易监管的区域评估。',
   reviewAsiaTitle: '2025 年亚洲及太平洋数字贸易监管审查',
-  reviewAsiaDescription: 'ESCAP 关于亚洲及太平洋数字贸易政策格局的最新动态和主要发现。',
+  reviewAsiaDescription: '《2025年数字贸易监管审查》介绍 ESCAP 的监管动态与研究发现，旨在加深对亚洲及太平洋地区数字贸易政策环境的了解。报告依据截至2025年的数据，概述部分亚太经济体的数字贸易政策格局。分析采用 ESCAP-ECA-ECLAC RDTII 框架，详见《区域数字贸易一体化指数 2.1：指南》。报告还提出政策建议，以推进区域内数字贸易一体化。',
   reviewAseanTitle: '2025 年东盟数字贸易监管审查',
-  reviewAseanDescription: '分析东盟成员国的数字贸易政策环境，并提供实例和建议。',
+  reviewAseanDescription: '《东盟数字贸易监管审查》由联合国亚洲及太平洋经济社会委员会（ESCAP）与东南亚国家联盟（ASEAN）秘书处联合发布。本报告是加深对东盟所有成员国数字贸易政策环境了解的重要进展。报告依据 ESCAP 截至2025年收集的数据，概述东盟10个经济体的数字贸易政策格局。数据收集与分析采用 ESCAP-ECA-ECLAC RDTII 框架，详见《区域数字贸易一体化指数 2.1：指南》。报告介绍东盟成功推进监管一体化的案例，并提出进一步加强成员国间数字贸易一体化的战略建议。',
   reviewNorthCentralAsiaTitle: '2025 年北亚和中亚数字贸易监管审查',
-  reviewNorthCentralAsiaDescription: '比较分析北亚和中亚地区的数字贸易监管。',
+  reviewNorthCentralAsiaDescription: '本报告对北亚和中亚次区域的数字贸易监管实践进行了比较概述。分析基于区域数字贸易一体化指数（RDTII 2.1）框架。该综合工具有助于识别趋同与差异模式，为循证政策制定提供参考，框架详见《区域数字贸易一体化指数 2.1：指南》。此外，报告使用 RDTII 2.1 数据计算数字贸易监管相似度（DTRS）指数，以衡量经济体间的一致程度，并评估北亚和中亚数字贸易一体化的潜在复杂性。',
   reviewPacificTitle: '2025 年太平洋数字贸易监管审查',
-  reviewPacificDescription: '比较概述太平洋地区的数字贸易监管实践。',
+  reviewPacificDescription: '本报告对太平洋地区的数字贸易监管实践进行了比较概述。分析基于区域数字贸易一体化指数（RDTII 2.1）框架。该综合工具有助于识别趋同与差异模式，为循证政策制定提供参考。此外，报告使用 RDTII 2.1 数据计算数字贸易监管相似度（DTRS）指数，以量化经济体间的一致程度，并评估太平洋地区数字贸易一体化的潜在复杂性。',
   reviewSouthSouthWestAsiaTitle: '2025 年南亚和西南亚数字贸易监管审查',
-  reviewSouthSouthWestAsiaDescription: '比较分析南亚和西南亚地区的数字贸易监管。'
+  reviewSouthSouthWestAsiaDescription: '本报告对南亚和西南亚次区域的数字贸易监管实践进行了比较概述。分析基于区域数字贸易一体化指数（RDTII 2.1）框架。该综合工具有助于识别趋同与差异模式，为循证政策制定提供参考，框架详见《区域数字贸易一体化指数 2.1：指南》。此外，报告使用 RDTII 2.1 数据计算数字贸易监管相似度（DTRS）指数，以衡量经济体间的一致程度，并评估南亚和西南亚数字贸易一体化的潜在复杂性。'
 })
 
 Object.assign(translations['ru-RU'].publications, {
+  gvcTitle: 'Глобальные цепочки создания стоимости (ГЦСС)',
+  gvcSubtitle: 'Исследования и аналитические материалы о глобальных цепочках создания стоимости, торговле и региональной интеграции.',
+  rdtiSubtitle: 'Методология, профили экономик и анализ регулирования для поддержки интеграции цифровой торговли в Азии и Тихоокеанском регионе.',
+  monitorEyebrow: 'Мониторинг торговли и цепочек поставок',
+  monitorTitle: 'Обзоры мониторинга торговли и цепочек поставок',
+  monitorDescriptionStart: 'В последнее время геополитическая нестабильность и сбои в мировой торговле, особенно в Западной Азии, оказывают значительное давление на глобальные цепочки создания стоимости. В серии аналитических записок ESCAP использует данные ',
+  monitorDescriptionAnalyzer: 'Анализатора цепочек создания стоимости RIVA',
+  monitorDescriptionEnd: ', чтобы изучить подверженность экономик Азиатско-Тихоокеанского региона таким потрясениям и структурные уязвимости, влияющие на торговлю. В записках также представлен отраслевой анализ этих рисков и рекомендации по мерам политики, которые помогут экономикам ориентироваться во всё более сложной и быстро меняющейся мировой торговой среде.',
+  exploreMonitor: 'Перейти к мониторингу торговли и цепочек поставок',
   heroEyebrow: 'ЦЕНТР ЗНАНИЙ RIVA',
   featuredHeading: 'Избранная публикация',
   featuredDate: 'Апрель 2026',
@@ -228,7 +260,7 @@ Object.assign(translations['ru-RU'].publications, {
   exploreTitle: 'Изучить RDTII',
   exploreSubtitle: 'Ключевые ресурсы о цифровой торговле, профилях экономик и региональной интеграции.',
   economyProfiles: 'Профили экономик',
-  economyProfilesDescription: 'Изучите профили политики в сфере цифровой торговли экономик Азиатско-Тихоокеанского региона и субрегионов.',
+  economyProfilesDescription: 'В этой публикации представлены профили политики в сфере цифровой торговли экономик Азиатско-Тихоокеанского региона, включённые в базу данных ESCAP по Индексу региональной интеграции цифровой торговли (RDTII 2.1). В докладе представлен обзор политики, включая меры, способствующие интеграции цифровой торговли, и связанные с ней вызовы. Кроме того, освещаются новые меры политики, предложения по цифровой торговле и участие соответствующих экономик в переговорах по вопросам цифровой торговли.',
   eastNorthEastAsia: 'Восточная и Северо-Восточная Азия',
   southEastAsia: 'Юго-Восточная Азия',
   southSouthWestAsia: 'Южная и Юго-Западная Азия',
@@ -236,7 +268,11 @@ Object.assign(translations['ru-RU'].publications, {
   exploreEconomyProfiles: 'Изучить профили экономик',
   guideLabel: 'РУКОВОДСТВО',
   guideTitle: 'Индекс региональной интеграции цифровой торговли 2.1: руководство',
-  guideDescription: 'Ознакомьтесь со структурой, показателями и методологией RDTII 2.1.',
+  guideDescription: 'Руководство по Индексу региональной интеграции цифровой торговли (RDTII), редакция 2.1, — важное пособие для политиков и исследователей, анализирующих регулирование цифровой торговли. В руководстве разъясняется структура RDTII 2.1 — многомерного индекса интеграции регулирования цифровой торговли по экономикам, который ESCAP использует для анализа регулирования цифровой торговли. Это обновлённое издание основано на предыдущей версии (Руководство RDTII 2.0), подготовленной совместно ESCAP, ECA и ECLAC. Чтобы углубить понимание политики в сфере цифровой торговли в Азиатско-Тихоокеанском регионе, в редакцию 2.1 включены новые показатели, рассмотрены связанные с ними последствия для политики и предложены дополнительные источники.',
+  guideDescriptionFirst: 'Руководство по Индексу региональной интеграции цифровой торговли (RDTII), редакция 2.1, — важное пособие для политиков и исследователей, анализирующих регулирование цифровой торговли. В руководстве разъясняется структура RDTII 2.1 — многомерного индекса интеграции регулирования цифровой торговли по экономикам, который ESCAP использует для анализа регулирования цифровой торговли.',
+  guideDescriptionSecondStart: 'Это обновлённое издание основано на предыдущей версии (',
+  guideDescriptionSecondEnd: '), подготовленной совместно ESCAP, ECA и ECLAC. Чтобы углубить понимание политики в сфере цифровой торговли в Азиатско-Тихоокеанском регионе, в редакцию 2.1 включены новые показатели, рассмотрены связанные с ними последствия для политики и предложены дополнительные источники.',
+  previousGuide: 'Руководство RDTII 2.0',
   viewGuide: 'Открыть руководство',
   referenceHeading: 'Справочная публикация',
   referenceSubtitle: 'Последний отчет с профилями экономик и сравнительным анализом экономик Азиатско-Тихоокеанского региона.',
@@ -251,18 +287,27 @@ Object.assign(translations['ru-RU'].publications, {
   regulatoryReviewsTitle: 'Обзоры регулирования цифровой торговли, 2025',
   regulatoryReviewsSubtitle: 'Изучите региональные оценки регулирования цифровой торговли в Азии и Тихоокеанском регионе.',
   reviewAsiaTitle: 'Обзор регулирования цифровой торговли в Азии и Тихоокеанском регионе, 2025',
-  reviewAsiaDescription: 'Основные обновления и выводы ESCAP о политике в сфере цифровой торговли в Азии и Тихоокеанском регионе.',
+  reviewAsiaDescription: 'Издание «Обзор регулирования цифровой торговли за 2025 год» представляет обновления в сфере регулирования и выводы ESCAP, призванные углубить понимание политики цифровой торговли в Азии и Тихоокеанском регионе. В нём представлен обзор политики в отдельных экономиках региона на основе данных по состоянию на 2025 год. Анализ проводится в соответствии с рамочной методикой RDTII ESCAP, ECA и ECLAC, изложенной в Руководстве по Индексу региональной интеграции цифровой торговли 2.1. В докладе также предлагаются рекомендации по продвижению интеграции цифровой торговли в регионе.',
   reviewAseanTitle: 'Обзор регулирования цифровой торговли в АСЕАН, 2025',
-  reviewAseanDescription: 'Анализ политики цифровой торговли в государствах — членах АСЕАН с примерами и рекомендациями.',
+  reviewAseanDescription: 'Обзор регулирования цифровой торговли в АСЕАН — совместная публикация Экономической и социальной комиссии ООН для Азии и Тихого океана (ESCAP) и Секретариата Ассоциации государств Юго-Восточной Азии (АСЕАН). Доклад призван углубить понимание политики цифровой торговли во всех государствах — членах АСЕАН. В нём представлен обзор политики цифровой торговли в 10 экономиках АСЕАН на основе данных, собранных ESCAP по состоянию на 2025 год. Сбор и анализ данных проводились на основе рамочной методики RDTII ESCAP, ECA и ECLAC, изложенной в Руководстве по Индексу региональной интеграции цифровой торговли 2.1. В докладе приводятся примеры успешных инициатив по интеграции регулирования в АСЕАН и предлагаются стратегические рекомендации для дальнейшего развития интеграции цифровой торговли между государствами — членами АСЕАН.',
   reviewNorthCentralAsiaTitle: 'Обзор регулирования цифровой торговли в Северной и Центральной Азии, 2025',
-  reviewNorthCentralAsiaDescription: 'Сравнительный анализ регулирования цифровой торговли в Северной и Центральной Азии.',
+  reviewNorthCentralAsiaDescription: 'В докладе представлен сравнительный обзор практики регулирования цифровой торговли в субрегионе Северной и Центральной Азии. Анализ основан на рамочной методике Индекса региональной интеграции цифровой торговли (RDTII 2.1) — комплексном инструменте, который помогает выявлять тенденции сближения и расхождения для обоснованного принятия решений. Методика изложена в Руководстве по Индексу региональной интеграции цифровой торговли 2.1. Кроме того, для количественной оценки согласованности между экономиками на основе данных RDTII 2.1 рассчитывается Индекс сходства регулирования цифровой торговли (DTRS), позволяющий оценить потенциальную сложность интеграции цифровой торговли в Северной и Центральной Азии.',
   reviewPacificTitle: 'Обзор регулирования цифровой торговли в Тихоокеанском регионе, 2025',
-  reviewPacificDescription: 'Сравнительный обзор практик регулирования цифровой торговли в Тихоокеанском регионе.',
+  reviewPacificDescription: 'В докладе представлен сравнительный обзор практики регулирования цифровой торговли в Тихоокеанском регионе. Анализ основан на рамочной методике Индекса региональной интеграции цифровой торговли (RDTII 2.1) — комплексном инструменте, который помогает выявлять тенденции сближения и расхождения для обоснованного принятия решений. Кроме того, для количественной оценки согласованности между экономиками на основе данных RDTII 2.1 рассчитывается Индекс сходства регулирования цифровой торговли (DTRS), позволяющий оценить потенциальную сложность интеграции цифровой торговли в Тихоокеанском регионе.',
   reviewSouthSouthWestAsiaTitle: 'Обзор регулирования цифровой торговли в Южной и Юго-Западной Азии, 2025',
-  reviewSouthSouthWestAsiaDescription: 'Сравнительный анализ регулирования цифровой торговли в Южной и Юго-Западной Азии.'
+  reviewSouthSouthWestAsiaDescription: 'В докладе представлен сравнительный обзор практики регулирования цифровой торговли в субрегионе Южной и Юго-Западной Азии. Анализ основан на рамочной методике Индекса региональной интеграции цифровой торговли (RDTII 2.1) — комплексном инструменте, который помогает выявлять тенденции сближения и расхождения для обоснованного принятия решений. Методика изложена в Руководстве по Индексу региональной интеграции цифровой торговли 2.1. Кроме того, для количественной оценки согласованности между экономиками на основе данных RDTII 2.1 рассчитывается Индекс сходства регулирования цифровой торговли (DTRS), позволяющий оценить потенциальную сложность интеграции цифровой торговли в Южной и Юго-Западной Азии.'
 })
 
 Object.assign(translations['fr-FR'].publications, {
+  gvcTitle: 'Chaînes de valeur mondiales (CVM)',
+  gvcSubtitle: 'Recherches et analyses sur les chaînes de valeur mondiales, le commerce et l’intégration régionale.',
+  rdtiSubtitle: 'Méthodologie, profils économiques et analyse réglementaire au service de l’intégration du commerce numérique en Asie et dans le Pacifique.',
+  monitorEyebrow: 'Suivi du commerce et des chaînes d’approvisionnement',
+  monitorTitle: 'Notes du suivi du commerce et des chaînes d’approvisionnement',
+  monitorDescriptionStart: 'Ces derniers temps, les tensions géopolitiques et les perturbations du commerce mondial, en particulier en Asie occidentale, exercent une forte pression sur les chaînes de valeur mondiales. Dans une série de notes d’orientation, la CESAP utilise les données de l’',
+  monitorDescriptionAnalyzer: 'Analyseur des chaînes de valeur RIVA',
+  monitorDescriptionEnd: ' pour examiner l’exposition des économies d’Asie-Pacifique à ces chocs ainsi que les vulnérabilités structurelles qui affectent le commerce. Ces notes proposent aussi des analyses sectorielles des échanges et des orientations politiques pour aider les économies à évoluer dans un environnement commercial mondial toujours plus complexe et en rapide mutation.',
+  exploreMonitor: 'Consulter le suivi du commerce et des chaînes d’approvisionnement',
   heroEyebrow: 'CENTRE DE CONNAISSANCES RIVA',
   featuredHeading: 'Publication à la une',
   featuredDate: 'Avril 2026',
@@ -271,7 +316,7 @@ Object.assign(translations['fr-FR'].publications, {
   exploreTitle: 'Explorer le RDTII',
   exploreSubtitle: 'Ressources clés sur le commerce numérique, les profils économiques et l’intégration régionale.',
   economyProfiles: 'Profils économiques',
-  economyProfilesDescription: 'Explorez les profils des politiques de commerce numérique des économies et sous-régions d’Asie-Pacifique.',
+  economyProfilesDescription: 'Cette publication de la CESAP présente les profils des politiques de commerce numérique des économies d’Asie-Pacifique, intégrés à la base de données de l’Indice de l’intégration régionale du commerce numérique (RDTII 2.1). Le rapport donne un aperçu du paysage des politiques, en décrivant les mesures favorables à l’intégration du commerce numérique ainsi que les difficultés rencontrées. Il met également en évidence les nouvelles mesures et propositions relatives au commerce numérique, ainsi que la participation des économies concernées aux négociations commerciales portant sur le commerce numérique.',
   eastNorthEastAsia: 'Asie de l’Est et du Nord-Est',
   southEastAsia: 'Asie du Sud-Est',
   southSouthWestAsia: 'Asie du Sud et du Sud-Ouest',
@@ -279,7 +324,11 @@ Object.assign(translations['fr-FR'].publications, {
   exploreEconomyProfiles: 'Explorer les profils économiques',
   guideLabel: 'GUIDE',
   guideTitle: 'Indice de l’intégration régionale du commerce numérique 2.1 : guide',
-  guideDescription: 'Découvrez le cadre, les indicateurs et la méthodologie du RDTII 2.1.',
+  guideDescription: 'Le Guide 2.1 de l’Indice de l’intégration régionale du commerce numérique (RDTII) est un ouvrage de référence destiné à aider les responsables publics et les chercheurs à analyser la réglementation du commerce numérique. Il présente la structure du cadre RDTII 2.1, un indice multidimensionnel comparant l’intégration de la réglementation du commerce numérique entre les économies, utilisé par la CESAP pour analyser cette réglementation. Cette édition actualisée s’appuie sur les travaux de la version précédente (Guide RDTII 2.0), préparée conjointement par la CESAP, la CEA et la CEPALC. Afin d’améliorer la compréhension de l’environnement des politiques de commerce numérique en Asie-Pacifique, cette édition 2.1 introduit de nouveaux indicateurs, examine les implications qui en découlent pour les politiques publiques et propose des sources complémentaires.',
+  guideDescriptionFirst: 'Le Guide 2.1 de l’Indice de l’intégration régionale du commerce numérique (RDTII) est un ouvrage de référence destiné à aider les responsables publics et les chercheurs à analyser la réglementation du commerce numérique. Il présente la structure du cadre RDTII 2.1, un indice multidimensionnel comparant l’intégration de la réglementation du commerce numérique entre les économies, utilisé par la CESAP pour analyser cette réglementation.',
+  guideDescriptionSecondStart: 'Cette édition actualisée s’appuie sur les travaux de la version précédente (',
+  guideDescriptionSecondEnd: '), préparée conjointement par la CESAP, la CEA et la CEPALC. Afin d’améliorer la compréhension de l’environnement des politiques de commerce numérique en Asie-Pacifique, cette édition 2.1 introduit de nouveaux indicateurs, examine les implications qui en découlent pour les politiques publiques et propose des sources complémentaires.',
+  previousGuide: 'Guide RDTII 2.0',
   viewGuide: 'Voir le guide',
   referenceHeading: 'Publication de référence',
   referenceSubtitle: 'Le dernier rapport sur les profils économiques, avec une analyse comparative des économies d’Asie-Pacifique.',
@@ -294,15 +343,15 @@ Object.assign(translations['fr-FR'].publications, {
   regulatoryReviewsTitle: 'Examens de la réglementation du commerce numérique 2025',
   regulatoryReviewsSubtitle: 'Explorez les évaluations régionales de la réglementation du commerce numérique en Asie et dans le Pacifique.',
   reviewAsiaTitle: 'Examen de la réglementation du commerce numérique en Asie et dans le Pacifique, 2025',
-  reviewAsiaDescription: 'Principales mises à jour et conclusions de l’ESCAP sur les politiques de commerce numérique en Asie et dans le Pacifique.',
+  reviewAsiaDescription: 'L’édition 2025 de l’Examen de la réglementation du commerce numérique présente les évolutions réglementaires et les conclusions de la CESAP afin d’approfondir la compréhension de l’environnement des politiques de commerce numérique en Asie et dans le Pacifique. Elle donne un aperçu du paysage des politiques dans un échantillon d’économies d’Asie-Pacifique, à partir de données arrêtées en 2025. L’analyse suit le cadre RDTII de la CESAP, de la CEA et de la CEPALC, présenté dans le Guide de l’Indice de l’intégration régionale du commerce numérique 2.1. Le rapport propose également des recommandations pour faire progresser l’intégration du commerce numérique dans la région.',
   reviewAseanTitle: 'Examen de la réglementation du commerce numérique dans l’ASEAN, 2025',
-  reviewAseanDescription: 'Analyse de l’environnement des politiques de commerce numérique des États membres de l’ASEAN, avec exemples et recommandations.',
+  reviewAseanDescription: 'L’Examen de la réglementation du commerce numérique pour l’ASEAN est une publication conjointe de la Commission économique et sociale des Nations Unies pour l’Asie et le Pacifique (CESAP) et du Secrétariat de l’Association des nations de l’Asie du Sud-Est (ASEAN). Ce rapport marque une étape importante pour mieux comprendre l’environnement des politiques de commerce numérique dans l’ensemble des États membres de l’ASEAN. Il présente un aperçu du paysage des politiques des 10 économies de l’ASEAN, à partir des données recueillies par la CESAP jusqu’en 2025. La collecte et l’analyse des données s’appuient sur le cadre RDTII de la CESAP, de la CEA et de la CEPALC, présenté dans le Guide de l’Indice de l’intégration régionale du commerce numérique 2.1. Le rapport illustre des initiatives réussies d’intégration réglementaire en ASEAN et formule des recommandations stratégiques pour renforcer l’intégration du commerce numérique entre ses États membres.',
   reviewNorthCentralAsiaTitle: 'Examen de la réglementation du commerce numérique en Asie du Nord et en Asie centrale, 2025',
-  reviewNorthCentralAsiaDescription: 'Analyse comparative de la réglementation du commerce numérique en Asie du Nord et en Asie centrale.',
+  reviewNorthCentralAsiaDescription: 'Le rapport présente un aperçu comparatif des pratiques réglementaires en matière de commerce numérique dans la sous-région de l’Asie du Nord et de l’Asie centrale. L’analyse s’appuie sur le cadre de l’Indice de l’intégration régionale du commerce numérique (RDTII 2.1), un outil complet qui aide à repérer les convergences et les divergences afin d’éclairer l’élaboration de politiques fondées sur des données probantes. Ce cadre est présenté dans le Guide de l’Indice de l’intégration régionale du commerce numérique 2.1. En outre, l’Indice de similarité des réglementations du commerce numérique (DTRS), calculé à partir des données RDTII 2.1, mesure l’alignement entre les économies et aide à évaluer la complexité potentielle de l’intégration du commerce numérique en Asie du Nord et en Asie centrale.',
   reviewPacificTitle: 'Examen de la réglementation du commerce numérique dans le Pacifique, 2025',
-  reviewPacificDescription: 'Aperçu comparatif des pratiques de réglementation du commerce numérique dans le Pacifique.',
+  reviewPacificDescription: 'Le rapport présente un aperçu comparatif des pratiques réglementaires en matière de commerce numérique dans le Pacifique. L’analyse s’appuie sur le cadre de l’Indice de l’intégration régionale du commerce numérique (RDTII 2.1), un outil complet qui aide à repérer les convergences et les divergences afin d’éclairer l’élaboration de politiques fondées sur des données probantes. En outre, l’Indice de similarité des réglementations du commerce numérique (DTRS), calculé à partir des données RDTII 2.1, mesure l’alignement entre les économies et aide à évaluer la complexité potentielle de l’intégration du commerce numérique dans le Pacifique.',
   reviewSouthSouthWestAsiaTitle: 'Examen de la réglementation du commerce numérique en Asie du Sud et du Sud-Ouest, 2025',
-  reviewSouthSouthWestAsiaDescription: 'Analyse comparative de la réglementation du commerce numérique en Asie du Sud et du Sud-Ouest.'
+  reviewSouthSouthWestAsiaDescription: 'Le rapport présente un aperçu comparatif des pratiques réglementaires en matière de commerce numérique dans la sous-région de l’Asie du Sud et du Sud-Ouest. L’analyse s’appuie sur le cadre de l’Indice de l’intégration régionale du commerce numérique (RDTII 2.1), un outil complet qui aide à repérer les convergences et les divergences afin d’éclairer l’élaboration de politiques fondées sur des données probantes. Ce cadre est présenté dans le Guide de l’Indice de l’intégration régionale du commerce numérique 2.1. En outre, l’Indice de similarité des réglementations du commerce numérique (DTRS), calculé à partir des données RDTII 2.1, mesure l’alignement entre les économies et aide à évaluer la complexité potentielle de l’intégration du commerce numérique en Asie du Sud et du Sud-Ouest.'
 })
 
 translations['zh-CN'].backward = {

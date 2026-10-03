@@ -62,7 +62,7 @@
           <img src="/images/tradeSupplyChainMonitor.webp" :alt="t('publications.monitorTitle')" loading="lazy" decoding="async" />
           <div class="monitor-card__copy">
             <h2>{{ t("publications.monitorTitle") }}</h2>
-            <p>{{ t("publications.monitorDescription") }}</p>
+            <p>{{ t("publications.monitorDescriptionStart") }}<strong>{{ t("publications.monitorDescriptionAnalyzer") }}</strong>{{ t("publications.monitorDescriptionEnd") }}</p>
           </div>
           <a class="primary-link" href="https://www.unescap.org/our-work/trade-investment-innovation/trade-policy-integration/trade-and-supply-chain-monitor" target="_blank" rel="noopener noreferrer">
             {{ t("publications.exploreMonitor") }}<q-icon name="open_in_new" />
@@ -85,18 +85,20 @@
           <div class="resource-card__copy">
             <div class="resource-labels"><span>{{ t("publications.guideLabel") }}</span><span>2025</span></div>
             <h3>{{ t("publications.guideTitle") }}</h3>
-            <p>{{ t("publications.guideDescription") }}</p>
+            <p>{{ t("publications.guideDescriptionFirst") }}</p>
+            <p>
+              {{ t("publications.guideDescriptionSecondStart") }}<a href="https://hdl.handle.net/20.500.12870/6849" target="_blank" rel="noopener noreferrer">{{ t("publications.previousGuide") }}</a>{{ t("publications.guideDescriptionSecondEnd") }}
+            </p>
             <a class="secondary-link" href="https://www.unescap.org/kp/2025/regional-digital-trade-integration-index-rdtii-21-guide" target="_blank" rel="noopener noreferrer">{{ t("publications.viewGuide") }}<q-icon name="open_in_new" /></a>
           </div>
         </article>
 
         <article class="resource-card economy-card">
           <div class="card-kicker"><span></span>{{ t("publications.economyProfiles") }}</div>
-          <img src="/images/pub2_1.webp" :alt="t('publications.economyProfiles')" loading="lazy" decoding="async" />
+          <img src="/images/economy-profiles-2025.webp" :alt="t('publications.economyProfiles')" loading="lazy" decoding="async" />
           <div class="resource-card__copy">
             <h3>{{ t("publications.economyProfiles") }}</h3>
             <p>{{ t("publications.economyProfilesDescription") }}</p>
-            <div class="region-tags"><span>{{ t("publications.eastNorthEastAsia") }}</span><span>{{ t("publications.southEastAsia") }}</span><span>{{ t("publications.southSouthWestAsia") }}</span><span>{{ t("publications.pacific") }}</span></div>
             <a class="primary-link" href="https://www.unescap.org/projects/rcdtra/economy-profiles" target="_blank" rel="noopener noreferrer">{{ t("publications.exploreEconomyProfiles") }}<q-icon name="open_in_new" /></a>
           </div>
         </article>
@@ -105,11 +107,11 @@
           <div class="card-kicker"><span></span>{{ t("publications.regulatoryReviewsTitle") }}</div>
           <p class="regulatory-card__intro">{{ t("publications.regulatoryReviewsSubtitle") }}</p>
           <div class="regulatory-grid">
-            <a v-for="review in regulatoryReviews" :key="review.image" :href="review.url" target="_blank" rel="noopener noreferrer" class="regulatory-item">
+            <div v-for="review in regulatoryReviews" :key="review.image" class="regulatory-item">
               <img :src="review.image" :alt="`${t(review.titleKey)} publication cover`" loading="lazy" decoding="async" />
               <span class="regulatory-item__copy"><strong>{{ t(review.titleKey) }}</strong><small>{{ t(review.descriptionKey) }}</small></span>
-              <span class="regulatory-item__action">{{ t("publications.viewOnEscap") }}<q-icon name="open_in_new" /></span>
-            </a>
+              <a class="regulatory-item__action" :href="review.url" target="_blank" rel="noopener noreferrer">{{ t("publications.viewOnEscap") }}<q-icon name="open_in_new" /></a>
+            </div>
           </div>
         </section>
       </section>
@@ -241,6 +243,7 @@ const regulatoryReviews = [
 .resource-card { display: grid; grid-template-columns: 145px minmax(0,1fr); gap: 14px 24px; align-items: center; margin: 0 0 12px; padding: 14px 22px 8px; }
 .resource-card > .card-kicker { grid-column: 1 / -1; }
 .resource-card > img { width: 100%; height: 155px; object-fit: cover; object-position: top; border-radius: 2px; }
+.guide-card > img { object-fit: contain; object-position: center; }
 .resource-card__copy { min-width: 0; }
 .resource-labels { display: flex; gap: 8px; margin-bottom: 7px; }
 .resource-labels > span { padding: 3px 7px; border-radius: 3px; color: #0871c7; background: #e7f3ff; font-size: .68rem; font-weight: 750; }
@@ -252,28 +255,21 @@ const regulatoryReviews = [
 .region-tags span { padding: 0 10px; border-right: 1px solid #b9cbdc; }
 .region-tags span:first-child { padding-left: 0; }
 .region-tags span:last-child { border-right: 0; }
-.economy-card > img { height: 145px; }
+.economy-card > img { height: 155px; object-fit: contain; object-position: center; }
 .regulatory-card { margin-top: 12px; padding: 14px 12px 10px; }
 .regulatory-card__intro { margin: 0 6px 8px; color: #536b83; font-size: .88rem; }
-.regulatory-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); column-gap: 20px; }
+.regulatory-grid { display: grid; grid-template-columns: minmax(0,1fr); column-gap: 20px; }
 .regulatory-item { display: grid; grid-template-columns: 62px minmax(0,1fr) auto; align-items: center; gap: 10px; min-width: 0; padding: 9px 5px; border-bottom: 1px solid #e0eaf2; color: inherit; text-decoration: none; }
-.regulatory-item:hover { background: #f8fbfe; }
+a.regulatory-item:hover { background: #f8fbfe; }
 .regulatory-item > img { width: 58px; height: 76px; object-fit: cover; }
 .regulatory-item__copy { display: grid; align-content: center; min-width: 0; }
 .regulatory-item__copy .resource-labels { margin-bottom: 4px; }
 .regulatory-item__copy strong { color: #193d68; font-size: .84rem; line-height: 1.25; }
 .regulatory-item__copy small { margin-top: 3px; color: #5c7187; font-size: .74rem; line-height: 1.3; }
-.regulatory-item__action { display: inline-flex; align-items: center; gap: 5px; padding: 7px 9px; border: 1px solid #1480dc; border-radius: 3px; color: #0871c7; font-size: .72rem; font-weight: 700; white-space: nowrap; }
+.regulatory-item__action { display: inline-flex; align-items: center; gap: 5px; padding: 7px 9px; border: 1px solid #1480dc; border-radius: 3px; color: #0871c7; font-size: .72rem; font-weight: 700; text-decoration: none; white-space: nowrap; }
 .regulatory-item__action .q-icon { font-size: 15px; }
-@media (min-width:761px) {
- .regulatory-item:nth-child(1) { grid-column: 1; grid-row: 1; }
- .regulatory-item:nth-child(2) { grid-column: 1; grid-row: 2; }
- .regulatory-item:nth-child(3) { grid-column: 1; grid-row: 3; }
- .regulatory-item:nth-child(4) { grid-column: 2; grid-row: 1; }
- .regulatory-item:nth-child(5) { grid-column: 2; grid-row: 2; }
-}
 @media (min-width:761px) and (max-width:1024px) {
- .publications-main { width: calc(100% - 40px); }
+ .publications-main { width: calc(100% - 40px); margin-top: -104px; }
  .topic-section { padding-inline: 20px; }
  .monitor-card { grid-template-columns: 160px minmax(0,1fr); column-gap: 20px; }
  .monitor-card > .primary-link { grid-column: 2; justify-self: start; }
@@ -281,7 +277,7 @@ const regulatoryReviews = [
  .regulatory-item { grid-column: auto !important; grid-row: auto !important; grid-template-columns: 62px minmax(0,1fr) auto; }
 }
 @media (max-width:760px) {
- .publications-main { width: min(calc(100% - 28px),620px); margin-top: -46px; }
+ .publications-main { width: min(calc(100% - 28px),620px); margin-top: -104px; }
  .publications-hero__inner { gap: 14px; padding-inline: 24px; }
  .publications-hero__visual { width: 48px; height: 48px; flex-basis: 48px; }
  .publications-hero__icon { width: 46px; height: 40px; }
@@ -299,12 +295,18 @@ const regulatoryReviews = [
  .monitor-card > .primary-link { grid-column: 1 / -1; justify-self: end; }
  .resource-card { grid-template-columns: 105px minmax(0,1fr); gap: 14px; padding: 24px 12px 12px; }
  .resource-card > img { height: 130px; }
- .economy-card > img { height: 118px; }
+ .economy-card > img { height: 130px; }
+ .rdti-section .resource-card { grid-template-columns: minmax(0,1fr); gap: 14px; padding: 18px 14px 16px; }
+ .rdti-section .resource-card > .card-kicker, .rdti-section .resource-labels { display: none; }
+ .rdti-section .resource-card > img { grid-column: 1; width: min(100%,180px); height: 240px; margin: 0 auto; object-fit: contain; object-position: center; }
+ .rdti-section .resource-card__copy h3 { margin-bottom: 8px; }
  .regulatory-grid { grid-template-columns: 1fr; }
- .regulatory-item { grid-column: auto !important; grid-row: auto !important; }
+ .regulatory-item { grid-column: auto !important; grid-row: auto !important; grid-template-columns: minmax(0,1fr); gap: 10px; padding: 12px 5px; }
+ .regulatory-item > img { width: min(100%,150px); height: 210px; justify-self: center; object-fit: contain; }
+ .regulatory-item__action { grid-column: 1; justify-self: start; }
 }
 @media (max-width:480px) {
- .publications-main { width: calc(100% - 20px); margin-top: -32px; }
+ .publications-main { width: calc(100% - 20px); }
  .publications-hero { min-height: 0; border-radius: 18px; }
  .publications-hero { background-position: 68% center; }
  .publications-hero__inner { grid-template-columns: 42px minmax(0,1fr); gap: 10px; min-height: 0; padding: 22px 12px; }
@@ -335,8 +337,8 @@ const regulatoryReviews = [
  .resource-card__copy p { font-size: .82rem; }
  .region-tags { font-size: .7rem; }
  .region-tags span { padding-inline: 6px; }
- .regulatory-item { grid-template-columns: 50px minmax(0,1fr); gap: 8px; }
- .regulatory-item > img { width: 48px; height: 64px; }
- .regulatory-item__action { grid-column: 2; justify-self: start; padding: 5px 8px; }
+ .regulatory-item { grid-template-columns: minmax(0,1fr); gap: 10px; }
+ .regulatory-item > img { width: min(100%,150px); height: 210px; }
+ .regulatory-item__action { grid-column: 1; justify-self: start; padding: 5px 8px; }
 }
 </style>
