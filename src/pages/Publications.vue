@@ -3,25 +3,15 @@
     <HeaderMain class="!z-[1000]" />
     <VATitle menu="Publications" />
 
-    <main
-      class="publications-main max-w-[1200px] w-[95%] mx-auto mt-15 mt-[-100px] relative z-100"
-    >
+    <main class="publications-main">
       <section class="publications-hero">
         <div class="publications-hero__grid" aria-hidden="true"></div>
         <div class="publications-hero__glow publications-hero__glow--top"></div>
         <div class="publications-hero__glow publications-hero__glow--bottom"></div>
-
         <div class="publications-hero__inner">
           <div class="publications-hero__visual" aria-hidden="true">
-            <div class="publications-hero__orbit publications-hero__orbit--outer"></div>
-            <div class="publications-hero__orbit publications-hero__orbit--inner"></div>
-            <div class="publications-hero__icon-wrap">
-              <img src="/images/research.svg" alt="" class="publications-hero__icon" />
-            </div>
-            <span class="publications-hero__dot publications-hero__dot--one"></span>
-            <span class="publications-hero__dot publications-hero__dot--two"></span>
+            <img src="/images/publications-book.svg" alt="" class="publications-hero__icon" />
           </div>
-
           <div class="publications-hero__copy">
             <div class="publications-hero__eyebrow">
               <span class="publications-hero__eyebrow-line"></span>
@@ -29,251 +19,101 @@
             </div>
             <h1>{{ t("publications.heroTitle") }}</h1>
             <p>{{ t("publications.heroSubtitle") }}</p>
-            <div class="publications-hero__accent" aria-hidden="true">
-              <span></span><span></span><span></span>
-            </div>
+            <div class="publications-hero__accent" aria-hidden="true"><span></span><span></span><span></span></div>
           </div>
         </div>
       </section>
 
-      <section class="publication-card">
-        <div class="publication-card__heading">
-          <span class="publication-card__heading-accent" aria-hidden="true"></span>
-          <span>{{ t("publications.featuredHeading") }}</span>
-        </div>
-
-        <div class="publication-card__content">
-          <div class="publication-cover">
-            <img
-              src="/images/bookcover.webp"
-              :alt="t('publications.reportTitle')"
-              decoding="async"
-              class="publication-cover__image"
-            />
-            <span class="publication-cover__pages">
-              {{ t("publications.pages", { count: 41 }) }}
-            </span>
+      <section id="gvc" class="topic-section gvc-section">
+        <header class="topic-heading topic-heading--gvc">
+          <span class="topic-heading__accent" aria-hidden="true"></span>
+          <div>
+            <h1>{{ t("publications.gvcTitle") }}</h1>
+            <p>{{ t("publications.gvcSubtitle") }}</p>
           </div>
+        </header>
 
-          <div class="publication-details">
-            <div class="publication-featured">
-              {{ t("publications.featuredDate") }}
+        <article class="featured-card">
+          <div class="card-kicker"><span></span>{{ t("publications.featuredHeading") }}</div>
+          <div class="featured-card__body">
+            <div class="publication-cover">
+              <img src="/images/bookcover.webp" :alt="t('publications.reportTitle')" decoding="async" />
+              <span class="publication-cover__pages">{{ t("publications.pages", { count: 41 }) }}</span>
             </div>
-            <h2>{{ t("publications.reportTitle") }}</h2>
-            <h3>{{ t("publications.reportSubtitle") }}</h3>
-            <p class="publication-description">
-              {{ t("publications.description") }}
-            </p>
-
-            <div class="language-grid">
-              <q-btn
-                outline
-                no-caps
-                align="left"
-                color="primary"
-                class="language-option"
-                :href="pdfLinks.english"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <q-icon name="description" size="28px" class="language-option__icon" />
-                <div class="language-option__copy">
-                  <strong>{{ t("publications.englishPdf") }}</strong>
-                  <span>{{ t("publications.original") }}</span>
-                </div>
-              </q-btn>
-
-              <q-btn
-                outline
-                no-caps
-                align="left"
-                color="primary"
-                class="language-option"
-                :href="pdfLinks.russian"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <q-icon name="description" size="28px" class="language-option__icon" />
-                <div class="language-option__copy">
-                  <strong>{{ t("publications.russianPdf") }}</strong>
-                  <span>{{ t("publications.machineTranslated") }}</span>
-                </div>
-              </q-btn>
+            <div class="featured-card__details">
+              <div class="publication-featured">{{ t("publications.featuredDate") }}</div>
+              <h2>{{ t("publications.reportTitle") }}</h2>
+              <h3>{{ t("publications.reportSubtitle") }}</h3>
+              <p>{{ t("publications.description") }}</p>
+              <div class="language-grid">
+                <a class="language-option" :href="pdfLinks.english" target="_blank" rel="noopener noreferrer">
+                  <q-icon name="description" /><span><strong>{{ t("publications.englishPdf") }}</strong><small>{{ t("publications.original") }}</small></span>
+                </a>
+                <a class="language-option" :href="pdfLinks.russian" target="_blank" rel="noopener noreferrer">
+                  <q-icon name="description" /><span><strong>{{ t("publications.russianPdf") }}</strong><small>{{ t("publications.machineTranslated") }}</small></span>
+                </a>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </article>
 
-      <section class="digital-trade-section">
-        <div class="digital-trade-section__header">
-          <div class="digital-trade-section__heading">
-            <span class="digital-trade-section__accent" aria-hidden="true"></span>
-            <div>
-              <div class="digital-trade-section__eyebrow">{{ t("publications.exploreTitle") }}</div>
-              <p>
-                {{ t("publications.exploreSubtitle") }}
-              </p>
-            </div>
+        <article class="monitor-card">
+          <div class="card-kicker"><span></span>{{ t("publications.monitorEyebrow") }}</div>
+          <img src="/images/tradeSupplyChainMonitor.webp" :alt="t('publications.monitorTitle')" loading="lazy" decoding="async" />
+          <div class="monitor-card__copy">
+            <h2>{{ t("publications.monitorTitle") }}</h2>
+            <p>{{ t("publications.monitorDescription") }}</p>
           </div>
-
-        </div>
-
-        <div class="digital-trade-section__grid">
-          <article class="digital-trade-resource">
-            <img
-              src="/images/pub2_1.webp"
-              :alt="t('publications.economyProfiles')"
-              loading="lazy"
-              decoding="async"
-              class="digital-trade-resource__image"
-            />
-            <div class="digital-trade-resource__body">
-              <div class="digital-trade-resource__title-row">
-                <h3>{{ t("publications.economyProfiles") }}</h3>
-              </div>
-              <p>
-                {{ t("publications.economyProfilesDescription") }}
-              </p>
-              <div class="digital-trade-resource__tags">
-                <span>{{ t("publications.eastNorthEastAsia") }}</span>
-                <span>{{ t("publications.southEastAsia") }}</span>
-                <span>{{ t("publications.southSouthWestAsia") }}</span>
-                <span>{{ t("publications.pacific") }}</span>
-              </div>
-              <a
-                href="https://www.unescap.org/projects/rcdtra/economy-profiles"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="digital-trade-resource__button"
-              >
-                {{ t("publications.exploreEconomyProfiles") }}
-                <q-icon name="open_in_new" size="16px" />
-              </a>
-            </div>
-          </article>
-
-          <article class="digital-trade-resource digital-trade-resource--guide">
-            <img
-              src="/images/pub2_2.webp"
-              :alt="t('publications.guideTitle')"
-              loading="lazy"
-              decoding="async"
-              class="digital-trade-resource__image"
-            />
-            <div class="digital-trade-resource__body">
-              <div class="digital-trade-resource__labels">
-                <span>{{ t("publications.guideLabel") }}</span>
-                <span>2025</span>
-              </div>
-              <div class="digital-trade-resource__title-row">
-                <h3>{{ t("publications.guideTitle") }}</h3>
-              </div>
-              <p>{{ t("publications.guideDescription") }}</p>
-              <a
-                href="https://www.unescap.org/kp/2025/regional-digital-trade-integration-index-rdtii-21-guide"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="digital-trade-resource__button digital-trade-resource__button--outline"
-              >
-                {{ t("publications.viewGuide") }}
-                <q-icon name="open_in_new" size="16px" />
-              </a>
-            </div>
-          </article>
-        </div>
-
-        <section class="key-publication">
-          <div class="key-publication__heading">
-            <span class="key-publication__accent" aria-hidden="true"></span>
-            <div>
-              <h2>{{ t("publications.referenceHeading") }}</h2>
-              <p class="key-publication__subtitle">
-                {{ t("publications.referenceSubtitle") }}
-              </p>
-            </div>
-          </div>
-
-          <a
-            href="https://www.unescap.org/kp/2026/regional-digital-trade-integration-index-rdtii-21-economy-profiles"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="key-publication__card"
-          >
-            <img
-              src="/images/pub3_1.webp"
-              :alt="t('publications.referenceTitle')"
-              loading="lazy"
-              decoding="async"
-              class="key-publication__image"
-            />
-
-            <div class="key-publication__content">
-              <div class="key-publication__labels">
-                <span>{{ t("publications.publicationLabel") }}</span>
-                <span>2025</span>
-              </div>
-              <h3>{{ t("publications.referenceTitle") }}</h3>
-              <p>
-                {{ t("publications.referenceDescription") }}
-              </p>
-              <span class="key-publication__button">
-                {{ t("publications.viewOnEscap") }}
-                <q-icon name="open_in_new" size="16px" />
-              </span>
-            </div>
-
-            <ul class="key-publication__highlights">
-              <li><q-icon name="description" size="20px" />{{ t("publications.highlightCoverage") }}</li>
-              <li><q-icon name="bar_chart" size="20px" />{{ t("publications.highlightAnalysis") }}</li>
-              <li><q-icon name="groups" size="20px" />{{ t("publications.highlightMeasures") }}</li>
-              <li><q-icon name="settings" size="20px" />{{ t("publications.highlightPolicy") }}</li>
-            </ul>
+          <a class="primary-link" href="https://www.unescap.org/our-work/trade-investment-innovation/trade-policy-integration/trade-and-supply-chain-monitor" target="_blank" rel="noopener noreferrer">
+            {{ t("publications.exploreMonitor") }}<q-icon name="open_in_new" />
           </a>
-        </section>
+        </article>
+      </section>
 
-        <section class="regulatory-reviews">
-          <div class="regulatory-reviews__heading">
-            <span class="regulatory-reviews__accent" aria-hidden="true"></span>
-            <div>
-              <h2>{{ t("publications.regulatoryReviewsTitle") }}</h2>
-              <p>{{ t("publications.regulatoryReviewsSubtitle") }}</p>
-            </div>
+      <section id="rdti" class="topic-section rdti-section">
+        <header class="topic-heading">
+          <span class="topic-heading__accent" aria-hidden="true"></span>
+          <div>
+            <h2>{{ t("publications.rdtiTitle") }}</h2>
+            <p>{{ t("publications.rdtiSubtitle") }}</p>
           </div>
+        </header>
 
-          <div class="regulatory-reviews__grid">
-            <a
-              v-for="review in regulatoryReviews"
-              :key="review.image"
-              :href="review.url"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="regulatory-review-card"
-            >
-              <img
-                :src="review.image"
-                :alt="`${t(review.titleKey)} publication cover`"
-                loading="lazy"
-                decoding="async"
-                class="regulatory-review-card__image"
-              />
-              <div class="regulatory-review-card__content">
-                <div class="regulatory-review-card__labels">
-                  <span>{{ t("publications.regulatoryReviewLabel") }}</span>
-                  <span>2025</span>
-                </div>
-                <h3>{{ t(review.titleKey) }}</h3>
-                <p>{{ t(review.descriptionKey) }}</p>
-              </div>
-              <span class="regulatory-review-card__button">
-                {{ t("publications.viewOnEscap") }}
-                <q-icon name="open_in_new" size="16px" />
-              </span>
+        <article class="resource-card guide-card">
+          <div class="card-kicker"><span></span>{{ t("publications.guideLabel") }}</div>
+          <img src="/images/pub2_2.webp" :alt="t('publications.guideTitle')" loading="lazy" decoding="async" />
+          <div class="resource-card__copy">
+            <div class="resource-labels"><span>{{ t("publications.guideLabel") }}</span><span>2025</span></div>
+            <h3>{{ t("publications.guideTitle") }}</h3>
+            <p>{{ t("publications.guideDescription") }}</p>
+            <a class="secondary-link" href="https://www.unescap.org/kp/2025/regional-digital-trade-integration-index-rdtii-21-guide" target="_blank" rel="noopener noreferrer">{{ t("publications.viewGuide") }}<q-icon name="open_in_new" /></a>
+          </div>
+        </article>
+
+        <article class="resource-card economy-card">
+          <div class="card-kicker"><span></span>{{ t("publications.economyProfiles") }}</div>
+          <img src="/images/pub2_1.webp" :alt="t('publications.economyProfiles')" loading="lazy" decoding="async" />
+          <div class="resource-card__copy">
+            <h3>{{ t("publications.economyProfiles") }}</h3>
+            <p>{{ t("publications.economyProfilesDescription") }}</p>
+            <div class="region-tags"><span>{{ t("publications.eastNorthEastAsia") }}</span><span>{{ t("publications.southEastAsia") }}</span><span>{{ t("publications.southSouthWestAsia") }}</span><span>{{ t("publications.pacific") }}</span></div>
+            <a class="primary-link" href="https://www.unescap.org/projects/rcdtra/economy-profiles" target="_blank" rel="noopener noreferrer">{{ t("publications.exploreEconomyProfiles") }}<q-icon name="open_in_new" /></a>
+          </div>
+        </article>
+
+        <section class="regulatory-card">
+          <div class="card-kicker"><span></span>{{ t("publications.regulatoryReviewsTitle") }}</div>
+          <p class="regulatory-card__intro">{{ t("publications.regulatoryReviewsSubtitle") }}</p>
+          <div class="regulatory-grid">
+            <a v-for="review in regulatoryReviews" :key="review.image" :href="review.url" target="_blank" rel="noopener noreferrer" class="regulatory-item">
+              <img :src="review.image" :alt="`${t(review.titleKey)} publication cover`" loading="lazy" decoding="async" />
+              <span class="regulatory-item__copy"><strong>{{ t(review.titleKey) }}</strong><small>{{ t(review.descriptionKey) }}</small></span>
+              <span class="regulatory-item__action">{{ t("publications.viewOnEscap") }}<q-icon name="open_in_new" /></span>
             </a>
           </div>
         </section>
       </section>
     </main>
-
     <FooterMain />
   </div>
 </template>
@@ -333,1221 +173,170 @@ const regulatoryReviews = [
 </script>
 
 <style scoped>
-.publications-page {
-  min-height: 100vh;
-  background: #fff;
-  color: #252525;
+.publications-page { min-height: 100vh; color: #17365e; background: #fff; }
+.publications-main { width: min(1200px, calc(100% - 48px)); margin: -64px auto 40px; position: relative; z-index: 2; }
+.publications-hero { position: relative; min-height: 192px; overflow: hidden; isolation: isolate; color: #fff; border: 1px solid rgba(153,225,247,.28); border-radius: 12px; background: linear-gradient(90deg,rgba(3,34,59,.14),rgba(3,34,59,0) 58%),url('/images/publicationsHeroBg.webp') center 48% / cover no-repeat,#073856; box-shadow: 0 12px 30px rgba(4,38,58,.14); }
+.publications-hero__grid, .publications-hero__glow { position: absolute; pointer-events: none; }
+.publications-hero__grid { display: none; }
+.publications-hero__glow { display: none; }
+.publications-hero__glow::after { position: absolute; inset: 28px; border: 1px solid rgba(166,235,255,.12); border-radius: inherit; content: ''; }
+.publications-hero__glow--top { top: -232px; right: 9%; }
+.publications-hero__glow--bottom { right: -90px; bottom: -254px; }
+.publications-hero__inner { position: relative; z-index: 1; display: flex; min-height: 192px; align-items: center; gap: 16px; padding: 24px 34px; }
+.publications-hero__visual { position: relative; display: grid; width: 52px; height: 52px; flex: 0 0 52px; place-items: center; color: #fff; }
+.publications-hero__orbit { position: absolute; border: 1px solid rgba(183,239,255,.42); border-radius: 50%; transform: rotate(-24deg); }
+.publications-hero__orbit--outer { width: 162px; height: 94px; }
+.publications-hero__orbit--inner { width: 126px; height: 150px; border-color: rgba(183,239,255,.21); transform: rotate(38deg); }
+.publications-hero__icon-wrap { display: none; }
+.publications-hero__icon { display: block; width: 48px; height: 42px; }
+.publications-hero__dot { position: absolute; z-index: 2; width: 8px; height: 8px; border: 2px solid #0c496a; border-radius: 50%; background: #fdc300; box-shadow: 0 0 0 5px rgba(253,195,0,.12); }
+.publications-hero__dot--one { top: 18px; right: 20px; }
+.publications-hero__dot--two { bottom: 28px; left: 14px; width: 6px; height: 6px; background: #61d2f1; box-shadow: 0 0 0 5px rgba(97,210,241,.12); }
+.publications-hero__copy { max-width: 780px; }
+.publications-hero__eyebrow { display: flex; align-items: center; gap: 10px; margin-bottom: 13px; color: #8fe0f6; font-size: .72rem; font-weight: 700; letter-spacing: .18em; }
+.publications-hero__eyebrow-line { display: inline-block; width: 30px; height: 2px; background: #fdc300; }
+.publications-hero__copy h1 { margin: 0; color: #fff; font-size: clamp(1.5rem,2.6vw,2rem); font-weight: 700; letter-spacing: -.018em; line-height: 1.02; }
+.publications-hero__copy p { max-width: 735px; margin: 10px 0 0; color: rgba(245,252,255,.92); font-size: clamp(.92rem,1.25vw,1.05rem); line-height: 1.5; }
+.publications-hero__accent { display: flex; gap: 6px; margin-top: 18px; }
+.publications-hero__accent span { display: block; width: 28px; height: 4px; border-radius: 999px; background: #fdc300; }
+.publications-hero__accent span:nth-child(2) { width: 10px; opacity: .6; }
+.publications-hero__accent span:nth-child(3) { width: 5px; opacity: .35; }
+.topic-section { padding: 30px 24px 26px; scroll-margin-top: 24px; }
+.gvc-section { background: #fff; }
+.topic-heading--gvc { min-height: 76px; align-items: center; }
+.topic-heading { display: flex; align-items: flex-start; gap: 16px; margin: 0 0 18px; }
+.topic-heading__accent { flex: 0 0 6px; width: 6px; height: 34px; margin-top: 2px; border-radius: 4px; background: #f4b400; }
+.topic-heading h1, .topic-heading h2 { margin: 0; color: #193d68; font-size: clamp(1.45rem, 2.6vw, 2rem); font-weight: 750; line-height: 1.2; }
+.topic-heading p { margin: 6px 0 0; color: #516982; font-size: 1rem; line-height: 1.5; }
+.featured-card, .monitor-card, .resource-card, .regulatory-card { position: relative; border: 1px solid #d6e5f2; border-radius: 7px; background: #fff; box-shadow: 0 2px 8px rgba(19,64,105,.035); }
+.featured-card { padding: 14px 24px 20px; }
+.card-kicker { display: flex; align-items: center; gap: 12px; color: #0865b3; font-size: .83rem; font-weight: 750; line-height: 1.25; text-transform: uppercase; }
+.card-kicker > span { display: block; width: 5px; height: 23px; border-radius: 3px; background: #0879d5; }
+.featured-card > .card-kicker, .monitor-card > .card-kicker, .resource-card > .card-kicker, .regulatory-card > .card-kicker { position: static; margin: 0 0 10px; padding: 0; background: transparent; }
+.featured-card__body { display: grid; grid-template-columns: minmax(145px,205px) minmax(0,1fr); gap: clamp(24px,4vw,40px); align-items: center; }
+.publication-cover { position: relative; width: 100%; max-width: 195px; height: 290px; margin: 2px auto 0; }
+.publication-cover img { width: 100%; height: 100%; object-fit: cover; box-shadow: 0 3px 10px rgba(9,41,72,.16); }
+.publication-cover__pages { position: absolute; right: 6px; bottom: -11px; padding: 5px 12px; border-radius: 20px; color: #fff; background: #12375f; font-size: .72rem; font-weight: 700; white-space: nowrap; }
+.publication-featured { margin-bottom: 7px; color: #0871c7; font-size: .8rem; font-weight: 700; }
+.featured-card__details h2 { margin: 0 0 5px; color: #183a65; font-size: clamp(1.15rem,2.3vw,1.55rem); font-weight: 750; line-height: 1.22; }
+.featured-card__details h3 { margin: 0 0 9px; color: #125ba0; font-size: 1rem; font-weight: 700; line-height: 1.35; }
+.featured-card__details > p { max-width: 760px; margin: 0 0 16px; color: #52677e; font-size: .94rem; line-height: 1.5; }
+.language-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; max-width: 590px; }
+.language-option { display: flex; align-items: center; gap: 13px; min-height: 58px; padding: 9px 14px; border: 1px solid #1680e5; border-radius: 5px; color: #0769c4; text-decoration: none; }
+.language-option:hover { background: #f2f8ff; }
+.language-option > .q-icon { flex: 0 0 auto; font-size: 27px; }
+.language-option span { display: grid; gap: 2px; }
+.language-option strong { font-size: .88rem; }
+.language-option small { color: #60768d; font-size: .78rem; }
+.monitor-card { display: grid; grid-template-columns: 190px minmax(0,1fr) auto; align-items: center; gap: 16px 24px; margin-top: 16px; padding: 14px 18px 12px; }
+.monitor-card > .card-kicker { grid-column: 1 / -1; }
+.monitor-card > img { width: 100%; height: 112px; border-radius: 3px; object-fit: cover; object-position: center; }
+.monitor-card__copy h2 { margin: 0 0 5px; color: #193d68; font-size: 1.15rem; font-weight: 750; }
+.monitor-card__copy p { max-width: 570px; margin: 0; color: #536b83; font-size: .9rem; line-height: 1.45; }
+.primary-link, .secondary-link { display: inline-flex; align-items: center; justify-content: center; gap: 9px; min-height: 40px; padding: 9px 14px; border: 1px solid #0879d5; border-radius: 4px; color: #fff; background: #0879d5; font-size: .83rem; font-weight: 700; text-decoration: none; white-space: nowrap; }
+.primary-link:hover { background: #0865b3; }
+.primary-link .q-icon, .secondary-link .q-icon { font-size: 16px; }
+.rdti-section { margin-top: 24px; padding-top: 30px; background: #eaf7fc; }
+.rdti-section .topic-heading { margin-bottom: 20px; }
+.resource-card { display: grid; grid-template-columns: 145px minmax(0,1fr); gap: 14px 24px; align-items: center; margin: 0 0 12px; padding: 14px 22px 8px; }
+.resource-card > .card-kicker { grid-column: 1 / -1; }
+.resource-card > img { width: 100%; height: 155px; object-fit: cover; object-position: top; border-radius: 2px; }
+.resource-card__copy { min-width: 0; }
+.resource-labels { display: flex; gap: 8px; margin-bottom: 7px; }
+.resource-labels > span { padding: 3px 7px; border-radius: 3px; color: #0871c7; background: #e7f3ff; font-size: .68rem; font-weight: 750; }
+.resource-card__copy h3 { margin: 0 0 4px; color: #193d68; font-size: 1.15rem; font-weight: 750; line-height: 1.3; }
+.resource-card__copy p { margin: 0 0 9px; color: #526b83; font-size: .9rem; line-height: 1.45; }
+.secondary-link { min-height: 34px; padding: 6px 12px; color: #0871c7; background: #fff; }
+.secondary-link:hover { color: #fff; background: #0879d5; }
+.region-tags { display: flex; flex-wrap: wrap; gap: 0; margin: 5px 0 8px; color: #60768d; font-size: .78rem; }
+.region-tags span { padding: 0 10px; border-right: 1px solid #b9cbdc; }
+.region-tags span:first-child { padding-left: 0; }
+.region-tags span:last-child { border-right: 0; }
+.economy-card > img { height: 145px; }
+.regulatory-card { margin-top: 12px; padding: 14px 12px 10px; }
+.regulatory-card__intro { margin: 0 6px 8px; color: #536b83; font-size: .88rem; }
+.regulatory-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); column-gap: 20px; }
+.regulatory-item { display: grid; grid-template-columns: 62px minmax(0,1fr) auto; align-items: center; gap: 10px; min-width: 0; padding: 9px 5px; border-bottom: 1px solid #e0eaf2; color: inherit; text-decoration: none; }
+.regulatory-item:hover { background: #f8fbfe; }
+.regulatory-item > img { width: 58px; height: 76px; object-fit: cover; }
+.regulatory-item__copy { display: grid; align-content: center; min-width: 0; }
+.regulatory-item__copy .resource-labels { margin-bottom: 4px; }
+.regulatory-item__copy strong { color: #193d68; font-size: .84rem; line-height: 1.25; }
+.regulatory-item__copy small { margin-top: 3px; color: #5c7187; font-size: .74rem; line-height: 1.3; }
+.regulatory-item__action { display: inline-flex; align-items: center; gap: 5px; padding: 7px 9px; border: 1px solid #1480dc; border-radius: 3px; color: #0871c7; font-size: .72rem; font-weight: 700; white-space: nowrap; }
+.regulatory-item__action .q-icon { font-size: 15px; }
+@media (min-width:761px) {
+ .regulatory-item:nth-child(1) { grid-column: 1; grid-row: 1; }
+ .regulatory-item:nth-child(2) { grid-column: 1; grid-row: 2; }
+ .regulatory-item:nth-child(3) { grid-column: 1; grid-row: 3; }
+ .regulatory-item:nth-child(4) { grid-column: 2; grid-row: 1; }
+ .regulatory-item:nth-child(5) { grid-column: 2; grid-row: 2; }
+}
+@media (min-width:761px) and (max-width:1024px) {
+ .publications-main { width: calc(100% - 40px); }
+ .topic-section { padding-inline: 20px; }
+ .monitor-card { grid-template-columns: 160px minmax(0,1fr); column-gap: 20px; }
+ .monitor-card > .primary-link { grid-column: 2; justify-self: start; }
+ .regulatory-grid { grid-template-columns: minmax(0,1fr); }
+ .regulatory-item { grid-column: auto !important; grid-row: auto !important; grid-template-columns: 62px minmax(0,1fr) auto; }
+}
+@media (max-width:760px) {
+ .publications-main { width: min(calc(100% - 28px),620px); margin-top: -46px; }
+ .publications-hero__inner { gap: 14px; padding-inline: 24px; }
+ .publications-hero__visual { width: 48px; height: 48px; flex-basis: 48px; }
+ .publications-hero__icon { width: 46px; height: 40px; }
+ .topic-section { padding: 24px 14px 18px; }
+ .featured-card { padding: 24px 14px 18px; }
+ .featured-card__body { grid-template-columns: 125px minmax(0,1fr); gap: 18px; align-items: start; }
+ .publication-cover { height: 190px; }
+ .featured-card__details h2 { font-size: 1.08rem; }
+ .featured-card__details h3 { font-size: .88rem; }
+ .featured-card__details > p { font-size: .84rem; }
+ .language-grid { grid-template-columns: 1fr; gap: 8px; }
+ .language-option { min-height: 50px; }
+ .monitor-card { grid-template-columns: 130px minmax(0,1fr); gap: 14px; padding: 26px 12px 12px; }
+ .monitor-card > img { height: 92px; }
+ .monitor-card > .primary-link { grid-column: 1 / -1; justify-self: end; }
+ .resource-card { grid-template-columns: 105px minmax(0,1fr); gap: 14px; padding: 24px 12px 12px; }
+ .resource-card > img { height: 130px; }
+ .economy-card > img { height: 118px; }
+ .regulatory-grid { grid-template-columns: 1fr; }
+ .regulatory-item { grid-column: auto !important; grid-row: auto !important; }
+}
+@media (max-width:480px) {
+ .publications-main { width: calc(100% - 20px); margin-top: -32px; }
+ .publications-hero { min-height: 0; border-radius: 18px; }
+ .publications-hero { background-position: 68% center; }
+ .publications-hero__inner { grid-template-columns: 42px minmax(0,1fr); gap: 10px; min-height: 0; padding: 22px 12px; }
+ .publications-hero__visual { width: 42px; height: 42px; flex-basis: auto; }
+ .publications-hero__icon { width: 40px; height: 35px; }
+ .publications-hero__eyebrow { gap: 7px; margin-bottom: 8px; font-size: .62rem; letter-spacing: .12em; }
+ .publications-hero__eyebrow-line { width: 22px; }
+ .publications-hero__copy h1 { font-size: clamp(1.3rem,6.5vw,1.8rem); }
+ .publications-hero__copy p { margin-top: 8px; font-size: .8rem; line-height: 1.4; }
+ .publications-hero__accent { margin-top: 10px; }
+ .topic-section { padding-inline: 10px; }
+ .topic-heading { gap: 11px; }
+ .topic-heading p { font-size: .88rem; }
+ .featured-card__body { grid-template-columns: 1fr; }
+ .publication-cover { width: min(58%,175px); height: 240px; margin: 0 auto 8px; }
+ .featured-card__details h2 { font-size: 1.16rem; }
+ .language-grid { grid-template-columns: 1fr 1fr; }
+ .language-option { gap: 7px; padding: 8px; }
+ .language-option > .q-icon { font-size: 22px; }
+ .language-option strong { font-size: .76rem; }
+ .language-option small { font-size: .68rem; }
+ .monitor-card { grid-template-columns: 1fr; }
+ .monitor-card > img { height: 150px; }
+ .monitor-card > .primary-link { grid-column: auto; justify-self: stretch; }
+ .resource-card { grid-template-columns: 84px minmax(0,1fr); gap: 10px; padding-inline: 9px; }
+ .resource-card > img { height: 116px; }
+ .resource-card__copy h3 { font-size: .98rem; }
+ .resource-card__copy p { font-size: .82rem; }
+ .region-tags { font-size: .7rem; }
+ .region-tags span { padding-inline: 6px; }
+ .regulatory-item { grid-template-columns: 50px minmax(0,1fr); gap: 8px; }
+ .regulatory-item > img { width: 48px; height: 64px; }
+ .regulatory-item__action { grid-column: 2; justify-self: start; padding: 5px 8px; }
 }
-
-.publications-main {
-  margin-bottom: 40px;
-}
-
-.publications-hero {
-  position: relative;
-  min-height: 232px;
-  overflow: hidden;
-  isolation: isolate;
-  color: #fff;
-  border: 1px solid rgba(153, 225, 247, 0.28);
-  border-radius: 24px;
-  background:
-    radial-gradient(circle at 92% 10%, rgba(78, 203, 239, 0.28), transparent 34%),
-    linear-gradient(118deg, #062d46 0%, #0c496a 56%, #087d9f 100%);
-  box-shadow: 0 22px 46px rgba(4, 38, 58, 0.2);
-}
-
-.publications-hero__grid,
-.publications-hero__glow {
-  position: absolute;
-  pointer-events: none;
-}
-
-.publications-hero__grid {
-  inset: 0;
-  z-index: -1;
-  opacity: 0.16;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.18) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.18) 1px, transparent 1px);
-  background-size: 42px 42px;
-  mask-image: linear-gradient(90deg, transparent 0%, #000 42%, #000 100%);
-}
-
-.publications-hero__glow {
-  z-index: -1;
-  width: 320px;
-  height: 320px;
-  border: 1px solid rgba(166, 235, 255, 0.16);
-  border-radius: 50%;
-}
-
-.publications-hero__glow::after {
-  position: absolute;
-  inset: 28px;
-  border: 1px solid rgba(166, 235, 255, 0.12);
-  border-radius: inherit;
-  content: "";
-}
-
-.publications-hero__glow--top {
-  top: -232px;
-  right: 9%;
-}
-
-.publications-hero__glow--bottom {
-  right: -90px;
-  bottom: -254px;
-}
-
-.publications-hero__inner {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  min-height: 232px;
-  align-items: center;
-  gap: clamp(34px, 5vw, 74px);
-  padding: 28px clamp(28px, 6vw, 78px);
-}
-
-.publications-hero__visual {
-  position: relative;
-  display: grid;
-  width: 170px;
-  height: 170px;
-  flex: 0 0 170px;
-  place-items: center;
-}
-
-.publications-hero__orbit {
-  position: absolute;
-  border: 1px solid rgba(183, 239, 255, 0.42);
-  border-radius: 50%;
-  transform: rotate(-24deg);
-}
-
-.publications-hero__orbit--outer {
-  width: 162px;
-  height: 94px;
-}
-
-.publications-hero__orbit--inner {
-  width: 126px;
-  height: 150px;
-  border-color: rgba(183, 239, 255, 0.21);
-  transform: rotate(38deg);
-}
-
-.publications-hero__icon-wrap {
-  position: relative;
-  z-index: 1;
-  display: grid;
-  width: 108px;
-  height: 136px;
-  place-items: center;
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  border-radius: 28px;
-  background: rgba(2, 37, 61, 0.32);
-  box-shadow: 0 16px 34px rgba(2, 28, 44, 0.18), inset 0 0 0 8px rgba(255, 255, 255, 0.035);
-  transform: rotate(-7deg);
-}
-
-.publications-hero__icon {
-  width: 88px;
-  height: 88px;
-  transform: rotate(7deg);
-}
-
-.publications-hero__dot {
-  position: absolute;
-  z-index: 2;
-  width: 8px;
-  height: 8px;
-  border: 2px solid #0c496a;
-  border-radius: 50%;
-  background: #fdc300;
-  box-shadow: 0 0 0 5px rgba(253, 195, 0, 0.12);
-}
-
-.publications-hero__dot--one {
-  top: 18px;
-  right: 20px;
-}
-
-.publications-hero__dot--two {
-  bottom: 28px;
-  left: 14px;
-  width: 6px;
-  height: 6px;
-  background: #61d2f1;
-  box-shadow: 0 0 0 5px rgba(97, 210, 241, 0.12);
-}
-
-.publications-hero__copy {
-  max-width: 780px;
-}
-
-.publications-hero__eyebrow {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 13px;
-  color: #8fe0f6;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-}
-
-.publications-hero__eyebrow-line {
-  display: inline-block;
-  width: 30px;
-  height: 2px;
-  background: #fdc300;
-}
-
-.publications-hero__copy h1 {
-  margin: 0;
-  color: #fff;
-  font-size: clamp(2rem, 3.7vw, 3.2rem);
-  font-weight: 700;
-  letter-spacing: -0.018em;
-  line-height: 1.02;
-}
-
-.publications-hero__copy p {
-  max-width: 735px;
-  margin: 14px 0 0;
-  color: rgba(245, 252, 255, 0.88);
-  font-size: clamp(1rem, 1.5vw, 1.2rem);
-  line-height: 1.5;
-}
-
-.publications-hero__accent {
-  display: flex;
-  gap: 6px;
-  margin-top: 18px;
-}
-
-.publications-hero__accent span {
-  display: block;
-  width: 28px;
-  height: 4px;
-  border-radius: 999px;
-  background: #fdc300;
-}
-
-.publications-hero__accent span:nth-child(2) {
-  width: 10px;
-  opacity: 0.6;
-}
-
-.publications-hero__accent span:nth-child(3) {
-  width: 5px;
-  opacity: 0.35;
-}
-
-.publication-card {
-  width: min(1130px, calc(100% - 72px));
-  margin: 24px auto 0;
-  padding: 0 0 28px;
-  border-bottom: 1px solid #e5edf2;
-  background: #fff;
-}
-
-.publication-card__heading {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 14px;
-  color: #183b66;
-  font-size: 1.2rem;
-  font-weight: 700;
-}
-
-.publication-card__heading-accent {
-  display: block;
-  width: 5px;
-  height: 24px;
-  flex: 0 0 5px;
-  border-radius: 1px;
-  background: #fdc300;
-}
-
-.publication-card__content {
-  display: grid;
-  grid-template-columns: minmax(170px, 195px) minmax(0, 1fr);
-  gap: 32px;
-  align-items: start;
-}
-
-.publication-cover {
-  position: relative;
-  width: min(100%, 185px);
-  align-self: center;
-  justify-self: center;
-  aspect-ratio: 319 / 453;
-  background: #06a9e2;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
-}
-
-.publication-cover__image {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-}
-
-.publication-cover__pages {
-  position: absolute;
-  right: 12px;
-  bottom: -12px;
-  padding: 5px 12px;
-  color: #fff;
-  background: #444;
-  border-radius: 999px;
-  font-size: 0.78rem;
-}
-
-.publication-details {
-  min-width: 0;
-}
-
-.publication-featured {
-  margin-bottom: 10px;
-  color: #0c6eae;
-  font-size: 0.72rem;
-  font-weight: 600;
-}
-
-.publication-details h2 {
-  margin: 0;
-  font-size: clamp(1.45rem, 2.25vw, 1.95rem);
-  font-weight: 700;
-  line-height: 1.12;
-}
-
-.publication-details h3 {
-  margin: 11px 0 13px;
-  color: #0784c8;
-  font-size: clamp(0.98rem, 1.55vw, 1.2rem);
-  font-weight: 700;
-  line-height: 1.25;
-}
-
-.publication-description {
-  max-width: 760px;
-  margin: 0 0 17px;
-  color: #707070;
-  font-size: 0.86rem;
-  line-height: 1.35;
-}
-
-.language-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 245px));
-  gap: 14px;
-  justify-content: start;
-}
-
-.language-option {
-  width: 100%;
-  min-width: 0;
-  min-height: 64px;
-  padding: 8px 13px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  border: 1px solid #dce5ec;
-  border-radius: 4px;
-  background: #fff;
-  box-shadow: 0 1px 2px rgba(19, 57, 84, 0.04);
-  text-align: left;
-}
-
-.language-option:hover {
-  background: #f5fbff;
-}
-
-.language-option :deep(.q-btn__content) {
-  width: 100%;
-  justify-content: flex-start;
-  gap: 12px;
-}
-
-.language-option__icon {
-  flex: 0 0 auto;
-  color: #0c78bc;
-}
-
-.language-option__copy {
-  min-width: 0;
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.language-option__copy strong {
-  color: #0c6eae;
-  font-size: 0.9rem;
-  font-weight: 700;
-  line-height: 1.15;
-}
-
-.language-option__copy span {
-  color: #6d7881;
-  font-size: 0.68rem;
-  line-height: 1.3;
-}
-
-.digital-trade-section {
-  width: min(1130px, calc(100% - 72px));
-  margin: 0 auto;
-  border-bottom: 1px solid #e5edf2;
-  background: #fff;
-}
-
-.digital-trade-section__header {
-  display: flex;
-  min-height: 0;
-  align-items: center;
-  justify-content: space-between;
-  padding: 18px 0 12px;
-}
-
-.digital-trade-section__heading {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-}
-
-.digital-trade-section__accent {
-  display: block;
-  width: 6px;
-  height: 24px;
-  flex: 0 0 6px;
-  margin-top: 2px;
-  border-radius: 2px;
-  background: #fdc300;
-}
-
-.digital-trade-section__eyebrow {
-  color: #183b66;
-  font-size: 1.2rem;
-  font-weight: 700;
-  line-height: 1.05;
-}
-
-.digital-trade-section__heading p {
-  max-width: 720px;
-  margin: 4px 0 0;
-  color: #5d7285;
-  font-size: 0.78rem;
-  line-height: 1.4;
-}
-
-.digital-trade-section__grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-  padding: 0 0 22px;
-}
-
-.key-publication {
-  padding: 18px 0 22px;
-  border-top: 1px solid #e5edf2;
-}
-
-.key-publication__heading {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 12px;
-}
-
-.key-publication__accent {
-  display: block;
-  width: 5px;
-  height: 24px;
-  flex: 0 0 5px;
-  border-radius: 2px;
-  background: #fdc300;
-}
-
-.key-publication__heading h2 {
-  margin: 0;
-  color: #173e70;
-  font-size: 1.2rem;
-  font-weight: 700;
-  line-height: 1.1;
-}
-
-.key-publication__subtitle {
-  margin: 4px 0 0;
-  color: #5d7285;
-  font-size: 0.78rem;
-  line-height: 1.35;
-}
-
-.key-publication__card {
-  display: grid;
-  grid-template-columns: 100px minmax(0, 1.2fr) minmax(220px, 0.8fr);
-  gap: 18px;
-  align-items: center;
-  padding: 10px 14px 10px 10px;
-  color: inherit;
-  border: 1px solid #d8e6ef;
-  border-radius: 4px;
-  background: #fff;
-  box-shadow: 0 3px 12px rgba(34, 87, 119, 0.07);
-  text-decoration: none;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.key-publication__card:hover {
-  border-color: #8dc7e6;
-  box-shadow: 0 6px 18px rgba(34, 87, 119, 0.12);
-}
-
-.key-publication__image {
-  width: 100px;
-  height: 136px;
-  display: block;
-  border-radius: 3px;
-  background: #eef6fb;
-  object-fit: contain;
-  object-position: center;
-}
-
-.key-publication__content {
-  min-width: 0;
-}
-
-.key-publication__labels {
-  display: flex;
-  gap: 6px;
-  margin-bottom: 8px;
-}
-
-.key-publication__labels span {
-  padding: 3px 7px;
-  color: #157dc1;
-  border-radius: 3px;
-  background: #eaf7ff;
-  font-size: 0.6rem;
-  font-weight: 700;
-  line-height: 1;
-}
-
-.key-publication__content h3 {
-  margin: 0;
-  color: #173e70;
-  font-size: clamp(1.05rem, 1.7vw, 1.35rem);
-  font-weight: 700;
-  line-height: 1.15;
-}
-
-.key-publication__content p {
-  margin: 9px 0 0;
-  color: #5a7690;
-  font-size: 0.78rem;
-  line-height: 1.42;
-}
-
-.key-publication__button {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  margin-top: 13px;
-  padding: 8px 13px;
-  color: #0879c6;
-  border: 1px solid #0879c6;
-  border-radius: 3px;
-  font-size: 0.72rem;
-  font-weight: 700;
-  line-height: 1.2;
-}
-
-.key-publication__card:hover .key-publication__button {
-  color: #fff;
-  background: #0879c6;
-}
-
-.key-publication__highlights {
-  display: grid;
-  gap: 13px;
-  margin: 0;
-  padding: 0 0 0 20px;
-  color: #5a7690;
-  border-left: 1px solid #d8e6ef;
-  font-size: 0.72rem;
-  line-height: 1.3;
-  list-style: none;
-}
-
-.key-publication__highlights li {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.key-publication__highlights .q-icon {
-  flex: 0 0 20px;
-  color: #0879c6;
-}
-
-.regulatory-reviews {
-  padding: 18px 0 22px;
-  border-top: 1px solid #e5edf2;
-}
-
-.regulatory-reviews__heading {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  margin-bottom: 12px;
-}
-
-.regulatory-reviews__accent {
-  display: block;
-  width: 5px;
-  height: 24px;
-  flex: 0 0 5px;
-  margin-top: 1px;
-  border-radius: 2px;
-  background: #fdc300;
-}
-
-.regulatory-reviews__heading h2 {
-  margin: 0;
-  color: #173e70;
-  font-size: 1.2rem;
-  font-weight: 700;
-  line-height: 1.1;
-}
-
-.regulatory-reviews__heading p {
-  margin: 4px 0 0;
-  color: #5d7285;
-  font-size: 0.78rem;
-  line-height: 1.4;
-}
-
-.regulatory-reviews__grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  grid-template-rows: repeat(3, minmax(0, auto));
-  grid-auto-flow: column;
-  gap: 0 18px;
-}
-
-.regulatory-review-card {
-  display: grid;
-  min-width: 0;
-  grid-template-columns: 62px minmax(0, 1fr) auto;
-  gap: 10px;
-  align-items: center;
-  padding: 8px 0;
-  color: inherit;
-  border-bottom: 1px solid #e5edf2;
-  background: #fff;
-  text-decoration: none;
-  transition: background 0.2s ease;
-}
-
-.regulatory-review-card:hover {
-  background: #f7fbfe;
-}
-
-.regulatory-review-card:nth-child(n + 4) {
-  padding-left: 18px;
-  border-left: 1px solid #d8e6ef;
-}
-
-.regulatory-review-card__image {
-  width: 62px;
-  height: 76px;
-  display: block;
-  border-radius: 3px;
-  background: #eef6fb;
-  object-fit: contain;
-  object-position: center;
-}
-
-.regulatory-review-card__content {
-  min-width: 0;
-}
-
-.regulatory-review-card__labels {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
-  margin-bottom: 7px;
-}
-
-.regulatory-review-card__labels span {
-  padding: 3px 6px;
-  color: #157dc1;
-  border-radius: 3px;
-  background: #eaf7ff;
-  font-size: 0.56rem;
-  font-weight: 700;
-  line-height: 1;
-}
-
-.regulatory-review-card__content h3 {
-  margin: 0;
-  color: #173e70;
-  font-size: clamp(0.78rem, 1.1vw, 0.92rem);
-  font-weight: 700;
-  line-height: 1.18;
-}
-
-.regulatory-review-card__content p {
-  margin: 4px 0 0;
-  color: #5a7690;
-  font-size: 0.64rem;
-  line-height: 1.35;
-}
-
-.regulatory-review-card__button {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 7px 10px;
-  color: #0879c6;
-  border: 1px solid #0879c6;
-  border-radius: 3px;
-  font-size: 0.68rem;
-  font-weight: 700;
-  line-height: 1.2;
-  white-space: nowrap;
-}
-
-.regulatory-review-card:hover .regulatory-review-card__button {
-  color: #fff;
-  background: #0879c6;
-}
-
-.digital-trade-resource {
-  display: grid;
-  min-height: 170px;
-  min-width: 0;
-  grid-template-columns: 120px minmax(0, 1fr);
-  gap: 12px;
-  padding: 10px;
-  overflow: hidden;
-  border: 1px solid #d8e6ef;
-  border-radius: 4px;
-  background: #f3faff;
-  box-shadow: none;
-}
-
-.digital-trade-resource__image {
-  width: 120px;
-  height: 150px;
-  display: block;
-  border-radius: 3px;
-  background: #eef6fb;
-  object-fit: contain;
-  object-position: center;
-}
-
-.digital-trade-resource__body {
-  min-width: 0;
-  padding: 16px 16px 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.digital-trade-resource__title-row {
-  display: flex;
-  width: 100%;
-  align-items: center;
-  gap: 8px;
-}
-
-.digital-trade-resource__title-row h3 {
-  margin: 0;
-  color: #173e70;
-  font-size: clamp(1rem, 1.55vw, 1.25rem);
-  font-weight: 700;
-  line-height: 1.12;
-}
-
-.digital-trade-resource__title-arrow {
-  display: grid;
-  width: 23px;
-  height: 23px;
-  flex: 0 0 23px;
-  place-items: center;
-  color: #147ec4;
-  border-radius: 50%;
-  background: #eef8ff;
-  font-size: 1.55rem;
-  line-height: 1;
-}
-
-.digital-trade-resource__body p {
-  margin: 9px 0 0;
-  color: #5a7690;
-  font-size: 0.78rem;
-  line-height: 1.4;
-}
-
-.digital-trade-resource__tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px 0;
-  margin-top: 10px;
-  color: #718da4;
-  font-size: 0.62rem;
-  line-height: 1.3;
-}
-
-.digital-trade-resource__tags span:not(:last-child)::after {
-  margin: 0 6px;
-  color: #9ab0bf;
-  content: "|";
-}
-
-.digital-trade-resource__labels {
-  display: flex;
-  gap: 6px;
-  margin-bottom: 9px;
-}
-
-.digital-trade-resource__labels span {
-  padding: 3px 7px;
-  color: #157dc1;
-  border-radius: 3px;
-  background: #eaf7ff;
-  font-size: 0.6rem;
-  font-weight: 700;
-  line-height: 1;
-}
-
-.digital-trade-resource__button {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  margin-top: auto;
-  padding: 8px 13px;
-  color: #fff;
-  border: 1px solid #0879c6;
-  border-radius: 3px;
-  background: #0879c6;
-  font-size: 0.72rem;
-  font-weight: 700;
-  line-height: 1.2;
-  text-decoration: none;
-  transition: background 0.2s ease, color 0.2s ease;
-}
-
-.digital-trade-resource__button:hover {
-  background: #0666a7;
-}
-
-.digital-trade-resource__button--outline {
-  color: #0879c6;
-  background: #fff;
-}
-
-.digital-trade-resource__button--outline:hover {
-  color: #fff;
-  background: #0879c6;
-}
-
-@media (max-width: 900px) {
-  .publications-hero__inner {
-    gap: 28px;
-    padding-inline: 32px;
-  }
-
-  .publications-hero__visual {
-    width: 156px;
-    height: 156px;
-    flex-basis: 156px;
-  }
-
-  .publications-hero__orbit--outer {
-    width: 150px;
-    height: 88px;
-  }
-
-  .publications-hero__orbit--inner {
-    width: 116px;
-    height: 140px;
-  }
-
-  .publications-hero__icon-wrap {
-    width: 102px;
-    height: 128px;
-    border-radius: 26px;
-  }
-
-  .publications-hero__icon {
-    width: 84px;
-    height: 84px;
-  }
-
-  .publication-card {
-    width: calc(100% - 24px);
-    padding: 18px 20px 26px;
-  }
-
-  .publication-card__content {
-    grid-template-columns: minmax(165px, 185px) minmax(0, 1fr);
-    gap: 28px;
-  }
-
-  .language-grid { grid-template-columns: minmax(0, 245px); }
-
-  .digital-trade-section {
-    width: calc(100% - 24px);
-  }
-
-  .digital-trade-section__header {
-    padding-inline: 22px;
-  }
-
-  .key-publication {
-    padding-inline: 22px;
-  }
-
-  .key-publication__card {
-    grid-template-columns: 96px minmax(0, 1fr) minmax(190px, 0.9fr);
-    gap: 14px;
-    padding-right: 12px;
-  }
-
-  .key-publication__image {
-    width: 96px;
-    height: 132px;
-  }
-
-  .regulatory-reviews {
-    padding-inline: 22px;
-  }
-
-  .regulatory-reviews__grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .regulatory-review-card {
-    grid-template-columns: 76px minmax(0, 1fr) auto;
-    gap: 10px;
-  }
-
-  .regulatory-review-card__image {
-    width: 76px;
-    height: 104px;
-  }
-
-  .digital-trade-resource {
-    min-height: 164px;
-    grid-template-columns: 110px minmax(0, 1fr);
-  }
-
-  .digital-trade-resource__image {
-    width: 110px;
-    height: 138px;
-  }
-}
-
-@media (max-width: 640px) {
-  .publications-main {
-    margin-bottom: 24px;
-  }
-
-  .publications-hero {
-    min-height: 0;
-    border-radius: 18px;
-  }
-
-  .publications-hero__inner {
-    min-height: 0;
-    align-items: flex-start;
-    gap: 22px;
-    padding: 30px 22px 32px;
-  }
-
-  .publications-hero__visual {
-    width: 92px;
-    height: 92px;
-    flex-basis: 92px;
-  }
-
-  .publications-hero__orbit--outer {
-    width: 92px;
-    height: 56px;
-  }
-
-  .publications-hero__orbit--inner {
-    width: 70px;
-    height: 88px;
-  }
-
-  .publications-hero__icon-wrap {
-    width: 68px;
-    height: 84px;
-    border-radius: 18px;
-    box-shadow: inset 0 0 0 5px rgba(255, 255, 255, 0.035);
-  }
-
-  .publications-hero__icon {
-    width: 58px;
-    height: 58px;
-  }
-
-  .publications-hero__dot--one {
-    top: 4px;
-    right: 3px;
-  }
-
-  .publications-hero__dot--two {
-    bottom: 8px;
-    left: 2px;
-  }
-
-  .publications-hero__eyebrow {
-    margin-bottom: 9px;
-    font-size: 0.6rem;
-    letter-spacing: 0.12em;
-  }
-
-  .publications-hero__eyebrow-line {
-    width: 20px;
-  }
-
-  .publications-hero__copy h1 {
-    font-size: clamp(1.7rem, 8vw, 2.35rem);
-  }
-
-  .publications-hero__copy p {
-    margin-top: 12px;
-    font-size: 0.92rem;
-    line-height: 1.45;
-  }
-
-  .publications-hero__accent {
-    margin-top: 16px;
-  }
-
-  .publication-card {
-    width: 100%;
-    margin-top: 18px;
-    padding: 18px 18px 28px;
-    gap: 24px;
-  }
-
-  .publication-card__heading {
-    margin-bottom: 18px;
-  }
-
-  .publication-card__content {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-  .publication-cover {
-    width: min(100%, 220px);
-    margin: 0 auto;
-  }
-
-  .publication-details {
-    padding-top: 0;
-  }
-
-  .publication-details h2 {
-    font-size: 1.75rem;
-  }
-
-  .language-option { padding: 10px 14px; }
-
-  .digital-trade-section {
-    width: 100%;
-    margin-top: 18px;
-  }
-
-  .digital-trade-section__header {
-    min-height: 0;
-    padding: 20px 18px 18px;
-  }
-
-  .digital-trade-section__grid {
-    grid-template-columns: 1fr;
-    padding: 0 18px 18px;
-  }
-
-  .key-publication {
-    padding: 18px 18px 18px;
-  }
-
-  .key-publication__card {
-    grid-template-columns: 90px minmax(0, 1fr);
-    gap: 14px;
-    padding: 10px 12px;
-  }
-
-  .key-publication__image {
-    width: 90px;
-    height: 125px;
-  }
-
-  .key-publication__highlights {
-    grid-column: 1 / -1;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px 14px;
-    padding: 13px 0 0;
-    border-top: 1px solid #d8e6ef;
-    border-left: 0;
-  }
-
-  .regulatory-reviews {
-    padding: 18px 18px 18px;
-  }
-
-  .regulatory-reviews__grid {
-    grid-template-columns: 1fr;
-    grid-template-rows: none;
-    grid-auto-flow: row;
-  }
-
-  .regulatory-review-card {
-    grid-template-columns: 92px minmax(0, 1fr) auto;
-  }
-
-  .regulatory-review-card:nth-child(n + 4) {
-    padding-left: 0;
-    border-left: 0;
-  }
-
-  .regulatory-review-card__image {
-    width: 92px;
-    height: 138px;
-  }
-
-  .digital-trade-resource {
-    min-height: 150px;
-    grid-template-columns: 100px minmax(0, 1fr);
-  }
-
-  .digital-trade-resource__image {
-    width: 100px;
-    height: 126px;
-  }
-
-  .digital-trade-resource__body {
-    padding: 13px 12px;
-  }
-}
-
-@media (max-width: 460px) {
-  .publications-hero__inner {
-    display: grid;
-    grid-template-columns: 78px minmax(0, 1fr);
-    gap: 16px;
-    padding-inline: 18px;
-  }
-
-  .publications-hero__visual {
-    width: 78px;
-    height: 78px;
-    flex-basis: auto;
-  }
-
-  .publications-hero__orbit--outer {
-    width: 78px;
-    height: 48px;
-  }
-
-  .publications-hero__orbit--inner {
-    width: 60px;
-    height: 76px;
-  }
-
-  .publications-hero__icon-wrap {
-    width: 58px;
-    height: 72px;
-    border-radius: 15px;
-  }
-
-  .publications-hero__icon {
-    width: 48px;
-    height: 48px;
-  }
-}
-
-@media (max-width: 460px) {
-  .digital-trade-section__heading h2 {
-    font-size: 1rem;
-  }
-
-  .digital-trade-section__heading p {
-    font-size: 0.72rem;
-  }
-
-  .digital-trade-resource {
-    min-height: 134px;
-    grid-template-columns: 90px minmax(0, 1fr);
-  }
-
-  .digital-trade-resource__image {
-    width: 90px;
-    height: 115px;
-  }
-
-  .digital-trade-resource__body {
-    padding: 11px 10px;
-  }
-
-  .key-publication__card {
-    grid-template-columns: 1fr;
-    justify-items: center;
-    gap: 13px;
-  }
-
-  .key-publication__image {
-    width: 100px;
-    height: 132px;
-  }
-
-  .key-publication__content {
-    width: 100%;
-  }
-
-  .key-publication__highlights {
-    grid-column: auto;
-    grid-template-columns: 1fr;
-    width: 100%;
-  }
-
-  .regulatory-review-card {
-    grid-template-columns: 84px minmax(0, 1fr) auto;
-    gap: 10px;
-    padding: 8px 0;
-  }
-
-  .regulatory-review-card__image {
-    width: 78px;
-    height: 118px;
-  }
-
-  .digital-trade-resource__title-row h3 {
-    font-size: 0.95rem;
-  }
-
-  .digital-trade-resource__body p {
-    font-size: 0.72rem;
-  }
-
-  .digital-trade-resource__tags {
-    font-size: 0.58rem;
-  }
-}
-
 </style>

@@ -222,42 +222,42 @@ watch(
           props.ShareText.yearStart +
           " - " +
           props.ShareText.yearEnd;
-        shareLink.value = `https://riva.negotiatetrade.org/#/gvcoverview/${props.ShareText.exporting.iso}/${props.ShareText.yearStart}/${props.ShareText.yearEnd}`;
+        shareLink.value = `https://riva.negotiatetrade.org/gvcoverview/${props.ShareText.exporting.iso}/${props.ShareText.yearStart}/${props.ShareText.yearEnd}`;
         isTinaOpen.value = false;
       } else if (
         pageName.value == "Backward Linkages" &&
         props.ShareText.sector
       ) {
-        shareLink.value = `https://riva.negotiatetrade.org/#/backwardlinkages/${props.ShareText.exporting.iso}/${props.ShareText.importing.iso}/${props.ShareText.yearStart}/${props.ShareText.yearEnd}/${props.ShareText.sector.sectorID}`;
+        shareLink.value = `https://riva.negotiatetrade.org/backwardlinkages/${props.ShareText.exporting.iso}/${props.ShareText.importing.iso}/${props.ShareText.yearStart}/${props.ShareText.yearEnd}/${props.ShareText.sector.sectorID}`;
         isTinaOpen.value = true;
         isTinaLink.value = true;
       } else if (
         pageName.value == "Backward Linkages" &&
         props.ShareText.source
       ) {
-        shareLink.value = `https://riva.negotiatetrade.org/#/backwardlinkagessource/${props.ShareText.exporting.iso}/${props.ShareText.importing.iso}/${props.ShareText.source.iso}/${props.ShareText.yearStart}/${props.ShareText.yearEnd}`;
+        shareLink.value = `https://riva.negotiatetrade.org/backwardlinkagessource/${props.ShareText.exporting.iso}/${props.ShareText.importing.iso}/${props.ShareText.source.iso}/${props.ShareText.yearStart}/${props.ShareText.yearEnd}`;
         isTinaOpen.value = true;
         isTinaLink.value = true;
       } else if (
         pageName.value == "Forward Linkages" &&
         props.ShareText.sector
       ) {
-        shareLink.value = `https://riva.negotiatetrade.org/#/forwardlinkages/${props.ShareText.exporting.iso}/${props.ShareText.yearStart}/${props.ShareText.yearEnd}/${props.ShareText.sector.sectorID}`;
+        shareLink.value = `https://riva.negotiatetrade.org/forwardlinkages/${props.ShareText.exporting.iso}/${props.ShareText.yearStart}/${props.ShareText.yearEnd}/${props.ShareText.sector.sectorID}`;
         isTinaOpen.value = false;
         isTinaLink.value = false;
       } else if (
         pageName.value == "Forward Linkages" &&
         props.ShareText.importing
       ) {
-        shareLink.value = `https://riva.negotiatetrade.org/#/forwardlinkagesimport/${props.ShareText.exporting.iso}/${props.ShareText.importing.iso}/${props.ShareText.yearStart}/${props.ShareText.yearEnd}`;
+        shareLink.value = `https://riva.negotiatetrade.org/forwardlinkagesimport/${props.ShareText.exporting.iso}/${props.ShareText.importing.iso}/${props.ShareText.yearStart}/${props.ShareText.yearEnd}`;
         isTinaOpen.value = true;
         isTinaLink.value = true;
       } else if (pageName.value == "Participation in GVCs") {
-        shareLink.value = `https://riva.negotiatetrade.org/#/ParticipationInGVCs/${props.ShareText.exporting.iso}/${props.ShareText.importing.iso}/${props.ShareText.yearStart}/${props.ShareText.yearEnd}/${props.ShareText.sector.sectorID}`;
+        shareLink.value = `https://riva.negotiatetrade.org/participationingvcs/${props.ShareText.exporting.iso}/${props.ShareText.importing.iso}/${props.ShareText.yearStart}/${props.ShareText.yearEnd}/${props.ShareText.sector.sectorID}`;
         isTinaOpen.value = true;
         isTinaLink.value = true;
       } else if (pageName.value == "Economy Briefs") {
-        shareLink.value = `https://riva.negotiatetrade.org/#/countrybriefs/${props.ShareText.iso}`;
+        shareLink.value = `https://riva.negotiatetrade.org/countrybriefs/${props.ShareText.iso}`;
         console.log(shareLink.value);
         isTinaOpen.value = false;
       }
