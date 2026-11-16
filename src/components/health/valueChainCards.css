@@ -1,0 +1,58 @@
+.biologics-chains, .devices-chains {
+  --navy: #0b153d;
+  --muted: #445b7b;
+  --high: #d51e40;
+  --medium: #ce9200;
+  --low: #22983a;
+  --border: #ced9e9;
+  color: var(--navy);
+  padding: 26px;
+  margin-bottom: 16px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: #fff;
+}
+.chain-cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; align-items: stretch; }
+.chain-cards--many { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.value-chain-card { position: relative; display: flex; flex-direction: column; gap: 8px; min-width: 0; min-height: 160px; width: 100%; padding: 15px 16px 14px 20px; border: 1px solid var(--border); border-radius: 12px; background: #fff; color: var(--navy); font: inherit; text-align: left; cursor: pointer; appearance: none; transition: border-color .18s ease, background-color .18s ease, box-shadow .18s ease, transform .18s ease; }
+.value-chain-card::before { content: ''; position: absolute; left: 0; top: 14px; bottom: 14px; width: 4px; border-radius: 0 2px 2px 0; background: var(--risk-color); }
+.value-chain-card.high { --risk-color: var(--high); }
+.value-chain-card.medium { --risk-color: var(--medium); }
+.value-chain-card.low { --risk-color: var(--low); }
+.value-chain-card.selected { border-color: #0061ff; background: #edf4fd; box-shadow: 0 0 0 1px #0061ff; }
+.view-analysis > .q-icon { transition: transform .18s ease; }
+.value-chain-card:hover { border-color: #0061ff; background: #dceaff; box-shadow: 0 0 0 1px #0061ff, 0 8px 20px rgba(11, 21, 61, .18); transform: translateY(-3px); }
+.value-chain-card.selected:hover { border-color: #004bcc; background: #d4e5ff; box-shadow: 0 0 0 1px #004bcc, 0 8px 20px rgba(11, 21, 61, .18); }
+.value-chain-card:hover .view-analysis { text-decoration: underline; text-underline-offset: 3px; }
+.value-chain-card:hover .view-analysis > .q-icon { transform: translateX(3px); }
+.value-chain-card:active { transform: translateY(0); }
+@media (prefers-reduced-motion: reduce) {
+  .value-chain-card, .view-analysis > .q-icon { transition: none; }
+  .value-chain-card:hover, .value-chain-card:hover .view-analysis > .q-icon { transform: none; }
+}
+.value-chain-card:focus-visible { outline: 2px solid #0061ff; outline-offset: 4px; }
+.card-heading { display: flex; align-items: flex-start; min-width: 0; }
+.chain-name { font-size: 16px; font-weight: 750; line-height: 1.3; overflow-wrap: anywhere; }
+.chain-trade { font-size: 24px; font-weight: 750; line-height: 1.2; }
+.card-details { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; min-height: 28px; margin-top: auto; padding-top: 4px; font-size: 12px; }
+.chain-risk { display: inline-flex; align-items: center; gap: 6px; color: var(--risk-color); font-weight: 700; }
+.dot { display: inline-block; flex-shrink: 0; width: 10px; height: 10px; border-radius: 50%; }
+.dot.high { background: var(--high); }
+.dot.medium { background: var(--medium); }
+.dot.low { background: var(--low); }
+.hs-code { color: var(--muted); font-size: 12px; line-height: 1.3; white-space: nowrap; }
+.viewing-badge { display: inline-flex; align-items: center; gap: 5px; margin-left: auto; padding: 4px 8px 4px 5px; border-radius: 24px; background: #d2e4ff; color: #0061ee; font-size: 11px; font-weight: 700; line-height: 1.2; white-space: nowrap; }
+.viewing-badge > .q-icon { display: inline-block; flex-shrink: 0; width: 18px; height: 18px; padding: 3px; border-radius: 50%; background: #0061ee; color: #fff; }
+.view-analysis { display: inline-flex; align-items: center; gap: 5px; margin-left: auto; color: #0061ee; font-weight: 700; white-space: nowrap; }
+.view-analysis > .q-icon { font-size: 18px; }
+.trade-note { display: flex; align-items: flex-start; gap: 8px; margin: 16px 0 0; color: var(--muted); font-size: 14px; line-height: 1.5; }
+.methodology { display: inline-flex; flex-shrink: 0; font-size: 20px; cursor: help; border-radius: 50%; }
+.methodology:focus-visible { outline: 2px solid #0061ff; outline-offset: 2px; }
+@media (min-width: 600px) and (max-width: 1023px) {
+  .chain-cards, .chain-cards--many { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 599px) {
+  .biologics-chains, .devices-chains { padding: 18px; }
+  .chain-cards, .chain-cards--many { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .value-chain-card { padding-left: 24px; padding-right: 16px; }
+}

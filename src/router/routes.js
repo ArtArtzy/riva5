@@ -13,6 +13,7 @@ const routes = [
   },
   {
     path: "/sectoral-analysis/health",
+    meta: { englishOnly: true },
     component: () => import("src/pages/HealthSector.vue"),
   },
   {

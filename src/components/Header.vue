@@ -56,11 +56,11 @@
         aria-label="About AI-translated content"
         @click="openLanguageNotice"
       >AI</button>
-      <q-btn flat dense no-caps class="gt-lg desktop-language-force nav-button" aria-label="Select language">
+      <q-btn flat dense no-caps class="gt-lg desktop-language-force nav-button" :disable="isLanguageLocked" :aria-label="isLanguageLocked ? 'English only on this page' : 'Select language'">
         <img :src="languageFlags[selectedLanguage]" alt="" class="mr-2 h-4 w-5 rounded-sm object-cover" />
         <span>{{ selectedLanguage }}</span>
-        <q-icon name="expand_more" class="ml-1" />
-        <q-menu>
+        <q-icon v-if="!isLanguageLocked" name="expand_more" class="ml-1" />
+        <q-menu v-if="!isLanguageLocked">
           <q-list padding class="min-w-[150px]">
             <q-item v-for="language in languages" :key="language" v-close-popup clickable @click="selectLanguage(language)">
               <q-item-section avatar><img :src="languageFlags[language]" alt="" class="h-4 w-5 rounded-sm object-cover" /></q-item-section>
@@ -78,11 +78,11 @@
           aria-label="About AI-translated content"
           @click="openLanguageNotice"
         >AI</button>
-        <q-btn flat dense no-caps class="gt-xs nav-button" aria-label="Select language">
+        <q-btn flat dense no-caps class="gt-xs nav-button" :disable="isLanguageLocked" :aria-label="isLanguageLocked ? 'English only on this page' : 'Select language'">
           <img :src="languageFlags[selectedLanguage]" alt="" class="mr-2 h-4 w-5 rounded-sm object-cover" />
           <span>{{ selectedLanguage }}</span>
-          <q-icon name="expand_more" class="ml-1" />
-          <q-menu>
+          <q-icon v-if="!isLanguageLocked" name="expand_more" class="ml-1" />
+          <q-menu v-if="!isLanguageLocked">
             <q-list padding class="min-w-[150px]">
               <q-item v-for="language in languages" :key="`compact-language-${language}`" v-close-popup clickable @click="selectLanguage(language)">
                 <q-item-section avatar><img :src="languageFlags[language]" alt="" class="h-4 w-5 rounded-sm object-cover" /></q-item-section>
@@ -99,9 +99,9 @@
           aria-label="About AI-translated content"
           @click="openLanguageNotice"
         >AI</button>
-        <q-btn flat round dense class="lt-sm" aria-label="Select language">
+        <q-btn flat round dense class="lt-sm" :disable="isLanguageLocked" :aria-label="isLanguageLocked ? 'English only on this page' : 'Select language'">
           <img :src="languageFlags[selectedLanguage]" :alt="`${selectedLanguage} flag`" class="h-4 w-5 rounded-sm object-cover" />
-          <q-menu>
+          <q-menu v-if="!isLanguageLocked">
             <q-list padding class="min-w-[150px]">
               <q-item v-for="language in languages" :key="`mobile-language-${language}`" v-close-popup clickable @click="selectLanguage(language)">
                 <q-item-section avatar><img :src="languageFlags[language]" alt="" class="h-4 w-5 rounded-sm object-cover" /></q-item-section>
@@ -180,13 +180,14 @@
 </template>
 
 <script setup>
-import { computed, ref } from "vue";
+import { computed, ref, watch } from "vue";
 import { useI18n } from "vue-i18n";
 import { useRoute, useRouter } from "vue-router";
 
 const router = useRouter();
 const currentRoute = useRoute();
 const { locale, t } = useI18n({ useScope: "global" });
+const isLanguageLocked = computed(() => Boolean(currentRoute.meta.englishOnly));
 const menuOpen = ref(false);
 const languageDialogOpen = ref(false);
 const pendingLanguage = ref("English");
@@ -201,6 +202,7 @@ const languageFlags = {
 };
 
 const selectLanguage = (language) => {
+  if (isLanguageLocked.value) return;
   const nextLocale = languageLocales[language];
 
   if (nextLocale === locale.value) return;
@@ -215,6 +217,10 @@ const selectLanguage = (language) => {
 };
 
 const continueInSelectedLanguage = () => {
+  if (isLanguageLocked.value) {
+    continueInEnglish();
+    return;
+  }
   locale.value = languageLocales[pendingLanguage.value];
   localStorage.setItem("riva-locale", locale.value);
   languageDialogOpen.value = false;
@@ -225,6 +231,13 @@ const continueInEnglish = () => {
   localStorage.setItem("riva-locale", locale.value);
   languageDialogOpen.value = false;
 };
+
+watch([isLanguageLocked, locale], ([locked]) => {
+  if (!locked) return;
+  if (locale.value !== "en-US") continueInEnglish();
+  pendingLanguage.value = "English";
+  languageDialogOpen.value = false;
+}, { immediate: true, flush: "sync" });
 
 const openLanguageNotice = () => {
   pendingLanguage.value = selectedLanguage.value;
